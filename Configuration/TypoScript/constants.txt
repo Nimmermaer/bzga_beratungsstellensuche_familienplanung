@@ -1,0 +1,10 @@
+plugin.tx_bzgaberatungsstellensuchefamilienplanung {
+    view {
+        # cat=plugin.tx_tx_bzgaberatungsstellensuchefamilienplanung/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Templates/
+        # cat=plugin.tx_bzgaberatungsstellensuchefamilienplanung/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Partials/
+        # cat=plugin.tx_bzgaberatungsstellensuchefamilienplanung/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Layouts/
+    }
+}

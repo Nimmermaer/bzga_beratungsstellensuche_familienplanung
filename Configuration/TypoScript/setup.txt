@@ -1,0 +1,22 @@
+plugin.tx_bzgaberatungsstellensuche {
+    view {
+        templateRootPaths {
+            20 = {$plugin.tx_bzgaberatungsstellensuchefamilienplanung.view.templateRootPath}
+        }
+
+        partialRootPaths {
+            20 = {$plugin.tx_bzgaberatungsstellensuchefamilienplanung.view.partialRootPath}
+        }
+
+        layoutRootPaths {
+            20 = {$plugin.tx_bzgaberatungsstellensuchefamilienplanung.view.layoutRootPath}
+        }
+    }
+
+    # Modify the translation
+    _LOCAL_LANG {
+        default {
+
+        }
+    }
+}

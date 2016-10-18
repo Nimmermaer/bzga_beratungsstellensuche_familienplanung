@@ -1,0 +1,14 @@
+# Map models to tables
+config.tx_extbase.persistence.classes {
+    BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting {
+        mapping {
+            tableName = tx_bzgaberatungsstellensuche_domain_model_pndconsulting
+        }
+    }
+
+    BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion {
+        mapping {
+            tableName = tx_bzgaberatungsstellensuche_domain_model_religion
+        }
+    }
+}

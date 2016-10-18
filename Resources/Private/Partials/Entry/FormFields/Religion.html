@@ -1,0 +1,8 @@
+{namespace bzga=BZgA\BzgaBeratungsstellensuche\ViewHelpers}
+<div class="form-group">
+    <label for="religion">
+        <bzga:translate key="religions-form-label"/>
+    </label>
+    <f:form.select class="form-control" property="religion" id="religion" prependOptionLabel="{bzga:translate(key: 'please-choose')}"
+                   prependOptionValue="" options="{religions}"/>
+</div>

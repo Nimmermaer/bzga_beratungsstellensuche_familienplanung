@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2016-08-14T12:41:03Z"
+          product-name="bzga_beratungsstellensuche_familienplanung">
+        <header/>
+        <body>
+            <trans-unit id="flexforms_additional.formFields.religion" xml:space="preserve">
+                <source>Konfession</source>
+            </trans-unit>
+            <trans-unit id="flexforms_additional.formFields.consultingAgreement" xml:space="preserve">
+                <source>Beratungsschein</source>
+            </trans-unit>
+            <trans-unit id="flexforms_additional.formFields.pndConsultingAgreement" xml:space="preserve">
+                <source>PND Beratungsschein</source>
+            </trans-unit>
+            <trans-unit id="flexforms_additional.formFields.motherAndChild" xml:space="preserve">
+                <source>Mutter und Kind</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>
