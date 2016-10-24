@@ -1,11 +1,28 @@
 <?php
 
-
 namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Hooks;
+
+/**
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
+ */
 
 use BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
+/**
+ * @package TYPO3
+ * @subpackage bzga_beratungsstellensuche_familienplanung
+ * @author Sebastian Schreiber
+ */
 class EntryRepository
 {
 
@@ -13,20 +30,25 @@ class EntryRepository
      * Modify the constraints used in the query
      *
      * @param array $params
-     * @return void
+     * @return void|null
      */
     public function modify(array $params)
     {
-        if (get_class($params['demand']) !== Demand::class) {
+        $demand = isset($params['demand']) ? $params['demand'] : null;
+        /* @var $demand Demand */
+
+        if (!$demand instanceof Demand) {
             return;
         }
 
-        $query = $params['query'];
+        $query = isset($params['query']) ? $params['query'] : null;
         /* @var $query QueryInterface */
+        if (!$query instanceof QueryInterface) {
+            return;
+        }
+
         $constraints = &$params['constraints'];
         /* @var $constraints array */
-        $demand = $params['demand'];
-        /* @var $demand Demand */
 
         if ($demand->isMotherAndChild()) {
             $constraints[] = $query->equals('motherAndChild', 1);
@@ -36,13 +58,12 @@ class EntryRepository
             $constraints[] = $query->equals('consultingAgreement', 1);
         }
 
-        if ($demand->getReligion()) {
-            $constraints[] = $query->equals('religiousDenomination', $demand->getReligion());
+        if ($religion = $demand->getReligion()) {
+            $constraints[] = $query->equals('religiousDenomination', $religion);
         }
 
         if ($demand->isPndConsulting()) {
-            $constraints[] = $query->equals('pndConsulting', 1);
-            $constraints[] = $query->equals('pndConsultants', 1);
+            // @TODO: Implement logic of MM-Relation
         }
 
 
