@@ -25,4 +25,14 @@ use BZgA\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
 class PndConsultingRepository extends AbstractBaseRepository
 {
 
+    /**
+     * @var string
+     */
+    const TABLE = 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting';
+
+    /**
+     * @var string
+     */
+    const MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pndconsulting_mm';
+
 }

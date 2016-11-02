@@ -26,7 +26,7 @@ return array(
         ),
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath(
                 'bzga_beratungsstellensuche_familienplanung'
-            ).'Resources/Public/Icons/tx_bzgaberatungsstellensuche_domain_model_religiousdenomination.gif',
+            ).'Resources/Public/Icons/tx_bzgaberatungsstellensuche_domain_model_religiousdenomination.png',
         'searchFields' => 'title',
     ),
     'interface' => array(

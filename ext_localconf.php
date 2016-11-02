@@ -16,7 +16,7 @@ $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TY
 // Extend name converter
 $signalSlotDispatcher->connect(
     \BZgA\BzgaBeratungsstellensuche\Domain\Serializer\NameConverter\EntryNameConverter::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::SIGNAL_MapNames,
+    \BZgA\BzgaBeratungsstellensuche\Events::SIGNAL_MAP_NAMES,
     \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryNameConverter::class,
     'mapNames'
 );
@@ -50,6 +50,13 @@ $signalSlotDispatcher->connect(
     \BZgA\BzgaBeratungsstellensuche\Events::FORM_ACTION_SIGNAL,
     \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryController::class,
     'listAction'
+);
+
+$signalSlotDispatcher->connect(
+    \BZgA\BzgaBeratungsstellensuche\Domain\Repository\EntryRepository::class,
+    \BZgA\BzgaBeratungsstellensuche\Events::TABLE_TRUNCATE_ALL_SIGNAL,
+    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryRepository::class,
+    'truncate'
 );
 
 

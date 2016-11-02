@@ -25,7 +25,7 @@ return array(
         ),
         'iconfile' => \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath(
                 'bzga_beratungsstellensuche_familienplanung'
-            ).'Resources/Public/Icons/tx_bzgaberatungsstellensuche_domain_model_pndconsulting.gif',
+            ).'Resources/Public/Icons/tx_bzgaberatungsstellensuche_domain_model_pndconsulting.png',
         'searchFields' => 'title',
     ),
     'interface' => array(

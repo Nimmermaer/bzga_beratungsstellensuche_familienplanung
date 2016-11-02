@@ -15,7 +15,8 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Hooks;
  * The TYPO3 project - inspiring people to share!
  */
 
-use BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand;
+use BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand as BaseDemand;
+use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
@@ -30,14 +31,14 @@ class EntryRepository
      * Modify the constraints used in the query
      *
      * @param array $params
-     * @return void|null
+     * @return void
      */
     public function modify(array $params)
     {
         $demand = isset($params['demand']) ? $params['demand'] : null;
-        /* @var $demand Demand */
+        /* @var $demand Demand|BaseDemand */
 
-        if (!$demand instanceof Demand) {
+        if (!$demand instanceof BaseDemand) {
             return;
         }
 
@@ -65,7 +66,6 @@ class EntryRepository
         if ($demand->isPndConsulting()) {
             // @TODO: Implement logic of MM-Relation
         }
-
 
     }
 
