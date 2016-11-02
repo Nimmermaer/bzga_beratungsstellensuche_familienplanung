@@ -1,4 +1,4 @@
-plugin.tx_bzgaberatungsstellensuchefamilienplanung {
+plugin.tx_bzgaberatungsstellensuche {
     view {
         # cat=plugin.tx_tx_bzgaberatungsstellensuchefamilienplanung/file; type=string; label=Path to template root (FE)
         templateRootPath = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Templates/
