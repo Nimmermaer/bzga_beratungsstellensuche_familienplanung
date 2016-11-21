@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -20,11 +20,11 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto;
  * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
-class Demand extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
+class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
 {
 
     /**
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
      */
     protected $religion;
 
@@ -44,7 +44,7 @@ class Demand extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     protected $pndConsulting;
 
     /**
-     * @return \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
+     * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
      */
     public function getReligion()
     {
@@ -52,7 +52,7 @@ class Demand extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @param \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religion
+     * @param \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religion
      */
     public function setReligion($religion)
     {

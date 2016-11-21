@@ -40,6 +40,12 @@
 			<trans-unit id="consulting-agreement" xml:space="preserve">
 				<source>Diese Beratungsstelle vergibt einen Beratungsschein nach §§5 und 6 des Schwangerschaftkonfliktgesetzes (SchKG).</source>
 			</trans-unit>
+			<trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
+				<source>Warum ist die Angabe des Bundeslandes wichtig?</source>
+			</trans-unit>
+			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
+				<source>Die Mittel der „Bundesstiftung Mutter und Kind“ werden über Stiftungen in den Bundesländern vergeben. Finanzielle Unterstützung kann deshalb nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem auch der eigene Wohnsitz liegt.</source>
+			</trans-unit>
         </body>
     </file>
 </xliff>

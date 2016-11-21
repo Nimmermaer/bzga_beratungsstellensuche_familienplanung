@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -16,9 +16,9 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
  */
 
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
-use BZgA\BzgaBeratungsstellensuche\Domain\Serializer\Serializer as BaseSerializer;
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting;
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
+use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Serializer as BaseSerializer;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
 
 /**
  * @package TYPO3

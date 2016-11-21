@@ -5,7 +5,7 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-\BZgA\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::registerExtensionKey($_EXTKEY, 60);
+\Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::registerExtensionKey($_EXTKEY, 60);
 
 # Template layout configuration
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bzga_beratungsstellensuche_familienplanung/Configuration/TSconfig/Beratungsstellensuche.txt">');
@@ -15,54 +15,54 @@ $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TY
 
 // Extend name converter
 $signalSlotDispatcher->connect(
-    \BZgA\BzgaBeratungsstellensuche\Domain\Serializer\NameConverter\EntryNameConverter::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::SIGNAL_MAP_NAMES,
-    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryNameConverter::class,
+    \Bzga\BzgaBeratungsstellensuche\Domain\Serializer\NameConverter\EntryNameConverter::class,
+    \Bzga\BzgaBeratungsstellensuche\Events::SIGNAL_MAP_NAMES,
+    \Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryNameConverter::class,
     'mapNames'
 );
 
 $signalSlotDispatcher->connect(
-    \BZgA\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::DENORMALIZE_CALLBACKS_SIGNAL,
-    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryNormalizer::class,
+    \Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer::class,
+    \Bzga\BzgaBeratungsstellensuche\Events::DENORMALIZE_CALLBACKS_SIGNAL,
+    \Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryNormalizer::class,
     'additionalCallbacks'
 );
 
 // Extend Importer
 $signalSlotDispatcher->connect(
     \Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::PRE_IMPORT_SIGNAL,
-    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\Importer::class,
+    \Bzga\BzgaBeratungsstellensuche\Events::PRE_IMPORT_SIGNAL,
+    \Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots\Importer::class,
     'preImport'
 );
 
 // Extend list view
 $signalSlotDispatcher->connect(
-    \BZgA\BzgaBeratungsstellensuche\Controller\EntryController::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::LIST_ACTION_SIGNAL,
-    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryController::class,
+    \Bzga\BzgaBeratungsstellensuche\Controller\EntryController::class,
+    \Bzga\BzgaBeratungsstellensuche\Events::LIST_ACTION_SIGNAL,
+    \Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryController::class,
     'listAction'
 );
 
 // Extend form view
 $signalSlotDispatcher->connect(
-    \BZgA\BzgaBeratungsstellensuche\Controller\EntryController::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::FORM_ACTION_SIGNAL,
-    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryController::class,
+    \Bzga\BzgaBeratungsstellensuche\Controller\EntryController::class,
+    \Bzga\BzgaBeratungsstellensuche\Events::FORM_ACTION_SIGNAL,
+    \Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryController::class,
     'listAction'
 );
 
 $signalSlotDispatcher->connect(
-    \BZgA\BzgaBeratungsstellensuche\Domain\Repository\EntryRepository::class,
-    \BZgA\BzgaBeratungsstellensuche\Events::TABLE_TRUNCATE_ALL_SIGNAL,
-    \BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryRepository::class,
+    \Bzga\BzgaBeratungsstellensuche\Domain\Repository\EntryRepository::class,
+    \Bzga\BzgaBeratungsstellensuche\Events::TABLE_TRUNCATE_ALL_SIGNAL,
+    \Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots\EntryRepository::class,
     'truncate'
 );
 
 
 // Extend the demand query
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['bzga_beratungsstellensuche']['Domain/Repository/EntryRepository.php']['findDemanded'][]
-    = 'EXT:bzga_beratungsstellensuche_essstoerungen/Classes/Hooks/EntryRepository.php:BZgA\\BzgaBeratungsstellensucheFamilienplanung\\Hooks\\EntryRepository->modify';
+    = 'EXT:bzga_beratungsstellensuche_essstoerungen/Classes/Hooks/EntryRepository.php:Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Hooks\\EntryRepository->modify';
 
 # Extend the form fields in flexforms
 $fields = array(
@@ -83,4 +83,4 @@ $fields = array(
         'motherAndChild',
     ),
 );
-\BZgA\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFormFields($fields);
+\Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFormFields($fields);

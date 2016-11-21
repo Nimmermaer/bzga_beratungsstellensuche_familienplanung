@@ -5,7 +5,7 @@ $additionalFields = array(
     'lg_name_en' => 'pnd_external_id',
 );
 
-\BZgA\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFieldsToTable($additionalFields,
+\Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFieldsToTable($additionalFields,
     'static_languages');
 
 unset($additionalFields);

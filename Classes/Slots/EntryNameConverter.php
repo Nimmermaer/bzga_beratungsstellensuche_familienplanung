@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
  * This file is part of the TYPO3 CMS project.

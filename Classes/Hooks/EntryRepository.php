@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Hooks;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -15,8 +15,8 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Hooks;
  * The TYPO3 project - inspiring people to share!
  */
 
-use BZgA\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand as BaseDemand;
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
+use Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand as BaseDemand;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**

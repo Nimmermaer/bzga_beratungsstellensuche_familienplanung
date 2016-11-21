@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -15,7 +15,7 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
  * The TYPO3 project - inspiring people to share!
  */
 
-use \BZgA\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer as BaseEntryNormalizer;
+use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer as BaseEntryNormalizer;
 
 /**
  * @package TYPO3
@@ -26,7 +26,7 @@ class EntryNormalizer
 {
 
     /**
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
      * @inject
      */
     protected $religionRepository;
@@ -38,7 +38,7 @@ class EntryNormalizer
     protected $languageRepository;
 
     /**
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
      * @inject
      */
     protected $pndConsultingRepository;

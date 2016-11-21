@@ -1,11 +1,24 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Hooks;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Hooks;
 
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository;
+/**
+ * This file is part of the TYPO3 CMS project.
+ *
+ * It is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU General Public License, either version 2
+ * of the License, or any later version.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE.txt file that was distributed with this source code.
+ *
+ * The TYPO3 project - inspiring people to share!
+ */
+
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
 
 class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
 {

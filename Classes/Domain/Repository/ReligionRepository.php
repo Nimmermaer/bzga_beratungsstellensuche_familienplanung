@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -15,7 +15,7 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
  * The TYPO3 project - inspiring people to share!
  */
 
-use BZgA\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
+use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
 
 /**
  * @package TYPO3

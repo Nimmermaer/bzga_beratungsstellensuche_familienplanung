@@ -1,7 +1,7 @@
 <?php
 
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
 
 /**
  * This file is part of the TYPO3 CMS project.

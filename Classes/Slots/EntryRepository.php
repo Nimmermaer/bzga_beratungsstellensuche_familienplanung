@@ -1,10 +1,10 @@
 <?php
 
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
-use BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
 use TYPO3\CMS\Core\Database\DatabaseConnection;
 
 class EntryRepository

@@ -26,13 +26,13 @@ class ReligionManager extends AbstractManager
 {
 
     /**
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
      * @inject
      */
     protected $repository;
 
     /**
-     * @return \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
+     * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
      */
     public function getRepository()
     {

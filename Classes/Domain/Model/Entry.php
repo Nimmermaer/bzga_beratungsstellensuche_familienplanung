@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -20,14 +20,14 @@ namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
  * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
-class Entry extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Entry
+class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
 {
 
 
     /**
      * Konfession.
      *
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
      */
     protected $religiousDenomination;
 
@@ -47,7 +47,7 @@ class Entry extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Entry
     protected $pndLanguages;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting>
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting>
      */
     protected $pndConsultings;
 
@@ -140,7 +140,7 @@ class Entry extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Entry
 
     /**
      * Returns the religiousDenomination.
-     * @return \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
+     * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
      */
     public function getReligiousDenomination()
     {
@@ -150,10 +150,10 @@ class Entry extends \BZgA\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * Sets the religiousDenomination.
      *
-     * @param \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
+     * @param \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
      */
     public function setReligiousDenomination(
-        \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
+        \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
     ) {
         $this->religiousDenomination = $religiousDenomination;
     }

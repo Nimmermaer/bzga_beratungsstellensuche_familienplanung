@@ -1,6 +1,6 @@
 <?php
 
-namespace BZgA\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
  * This file is part of the TYPO3 CMS project.
@@ -24,7 +24,7 @@ class EntryController
 {
 
     /**
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
      * @inject
      */
     protected $religionRepository;

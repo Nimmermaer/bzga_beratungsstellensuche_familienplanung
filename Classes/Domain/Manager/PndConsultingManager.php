@@ -26,13 +26,13 @@ class PndConsultingManager extends AbstractManager
 {
 
     /**
-     * @var \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
+     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
      * @inject
      */
     protected $repository;
 
     /**
-     * @return \BZgA\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
+     * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
      */
     public function getRepository()
     {
