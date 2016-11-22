@@ -30,11 +30,6 @@ class EntryController
     protected $religionRepository;
 
     /**
-     * @var
-     */
-    protected $pndConsultingRepository;
-
-    /**
      * @param array $variables
      * @return array
      */

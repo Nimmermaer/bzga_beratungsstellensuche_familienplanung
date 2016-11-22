@@ -44,6 +44,11 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     protected $pndConsulting;
 
     /**
+     * @var bool
+     */
+    protected $useCoordinates = false;
+
+    /**
      * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
      */
     public function getReligion()
@@ -106,5 +111,23 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     {
         $this->pndConsulting = $pndConsulting;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isUseCoordinates()
+    {
+        return $this->useCoordinates;
+    }
+
+    /**
+     * @param boolean $useCoordinates
+     */
+    public function setUseCoordinates($useCoordinates)
+    {
+        $this->useCoordinates = $useCoordinates;
+    }
+
+
 
 }
