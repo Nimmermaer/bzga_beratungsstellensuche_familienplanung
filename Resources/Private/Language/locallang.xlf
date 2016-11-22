@@ -25,6 +25,12 @@
 			<trans-unit id="mother-and-child-form-label" xml:space="preserve">
 				<source>Vergabe von Mitteln der Bundesstiftung Mutter und Kind</source>
 			</trans-unit>
+			<trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
+				<source>Warum ist die Angabe des Bundeslandes wichtig?</source>
+			</trans-unit>
+			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
+				<source>Die Mittel der „Bundesstiftung Mutter und Kind“ werden über Stiftungen in den Bundesländern vergeben. Finanzielle Unterstützung kann deshalb nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem auch der eigene Wohnsitz liegt.</source>
+			</trans-unit>
 			<trans-unit id="religions-form-label" xml:space="preserve">
 				<source>Konfession</source>
 			</trans-unit>
@@ -45,6 +51,15 @@
 			</trans-unit>
 			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
 				<source>Die Mittel der „Bundesstiftung Mutter und Kind“ werden über Stiftungen in den Bundesländern vergeben. Finanzielle Unterstützung kann deshalb nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem auch der eigene Wohnsitz liegt.</source>
+			</trans-unit>
+			<trans-unit id="consulting-agreement" xml:space="preserve">
+				<source>Beratungsschein</source>
+			</trans-unit>
+			<trans-unit id="yes" xml:space="preserve">
+				<source>ja</source>
+			</trans-unit>
+			<trans-unit id="no" xml:space="preserve">
+				<source>nein</source>
 			</trans-unit>
         </body>
     </file>
