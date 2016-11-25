@@ -2,7 +2,6 @@
   "name": "bzga/bzga-beratungsstellensuche-familienplanung",
   "type": "typo3-cms-extension",
   "description": "Beratungsstellensuche der BZgA für den Bereich Schwangerschaft",
-  "version": "6.2.0",
   "license": "GPL-2.0+",
   "authors": [
     {
@@ -36,10 +35,5 @@
   "replace": {
     "bzga_beratungsstellensuche_familienplanung": "self.version",
     "bzga/bzga-beratungsstellensuche-familienplanung": "self.version"
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "6.2.x-dev"
-    }
   }
 }
