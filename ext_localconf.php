@@ -59,28 +59,27 @@ $signalSlotDispatcher->connect(
     'truncate'
 );
 
-
 // Extend the demand query
 $GLOBALS['TYPO3_CONF_VARS']['EXT']['bzga_beratungsstellensuche']['Domain/Repository/EntryRepository.php']['findDemanded'][]
     = 'EXT:bzga_beratungsstellensuche_essstoerungen/Classes/Hooks/EntryRepository.php:Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Hooks\\EntryRepository->modify';
 
 # Extend the form fields in flexforms
-$fields = array(
-    array(
+$fields = [
+    [
         'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.religion',
         'religion',
-    ),
-    array(
+    ],
+    [
         'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.consultingAgreement',
         'consultingAgreement',
-    ),
-    array(
+    ],
+    [
         'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.pndConsultingAgreement',
         'pndConsultingAgreement',
-    ),
-    array(
+    ],
+    [
         'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.motherAndChild',
         'motherAndChild',
-    ),
-);
+    ],
+];
 \Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFormFields($fields);

@@ -14,14 +14,11 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand as BaseDemand;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class EntryRepository
@@ -66,7 +63,5 @@ class EntryRepository
         if ($demand->isPndConsulting()) {
             // @TODO: Implement logic of MM-Relation
         }
-
     }
-
 }

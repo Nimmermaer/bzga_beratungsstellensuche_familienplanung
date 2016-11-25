@@ -14,12 +14,9 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use Bzga\BzgaBeratungsstellensuche\Domain\Manager\AbstractManager;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class ReligionManager extends AbstractManager
@@ -38,6 +35,4 @@ class ReligionManager extends AbstractManager
     {
         return $this->repository;
     }
-
-
 }

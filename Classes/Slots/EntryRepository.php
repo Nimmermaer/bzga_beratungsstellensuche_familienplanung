@@ -3,8 +3,8 @@
 
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
-use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
 use TYPO3\CMS\Core\Database\DatabaseConnection;
 
 class EntryRepository
@@ -25,5 +25,4 @@ class EntryRepository
         $databaseConnection->exec_TRUNCATEquery(PndConsultingRepository::MM_TABLE);
         $databaseConnection->exec_TRUNCATEquery(self::LANGUAGE_MM_TABLE);
     }
-
 }

@@ -16,8 +16,6 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  */
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class EntryController
@@ -33,18 +31,16 @@ class EntryController
      * @param array $variables
      * @return array
      */
-    public function listAction(array $variables = array())
+    public function listAction(array $variables = [])
     {
         $religions = $this->religionRepository->findAll();
 
-
-        $variables = array_merge($variables, array(
+        $variables = array_merge($variables, [
             'religions' => $religions,
-        ));
+        ]);
 
-        return array(
+        return [
             'extendedVariables' => $variables,
-        );
+        ];
     }
-
 }

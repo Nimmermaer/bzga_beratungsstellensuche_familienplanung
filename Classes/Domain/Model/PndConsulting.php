@@ -14,15 +14,11 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use Bzga\BzgaBeratungsstellensuche\Domain\Model\AbstractEntity;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class PndConsulting extends AbstractEntity
 {
-
 }

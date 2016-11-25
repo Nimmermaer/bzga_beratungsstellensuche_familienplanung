@@ -14,12 +14,9 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class PndConsultingRepository extends AbstractBaseRepository
@@ -34,5 +31,4 @@ class PndConsultingRepository extends AbstractBaseRepository
      * @var string
      */
     const MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pndconsulting_mm';
-
 }

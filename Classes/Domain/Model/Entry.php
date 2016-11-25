@@ -16,13 +16,10 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
  */
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
 {
-
 
     /**
      * Konfession.
@@ -60,7 +57,6 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
      * @var string
      */
     protected $pndAllLanguages = null;
-
 
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\SJBR\StaticInfoTables\Domain\Model\Language>
@@ -117,7 +113,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     {
         if (null === $this->pndAllLanguages) {
             if ($this->pndLanguages || $this->pndOtherLanguage) {
-                $allLanguages = array();
+                $allLanguages = [];
                 foreach ($this->pndLanguages as $pndLanguage) {
                     /* @var $pndLanguage \SJBR\StaticInfoTables\Domain\Model\Language */
                     $allLanguages[] = $pndLanguage->getNameLocalized();
@@ -157,7 +153,6 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     ) {
         $this->religiousDenomination = $religiousDenomination;
     }
-
 
     /**
      * @return bool
@@ -206,6 +201,4 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     {
         $this->pndConsultings = $pndConsultings;
     }
-
-
 }

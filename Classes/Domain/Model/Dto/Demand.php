@@ -16,8 +16,6 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto;
  */
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
@@ -29,17 +27,17 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     protected $religion;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $motherAndChild = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $consultingAgreement = false;
 
     /**
-     * @var boolean
+     * @var bool
      */
     protected $pndConsulting;
 
@@ -65,7 +63,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isMotherAndChild()
     {
@@ -73,7 +71,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @param boolean $motherAndChild
+     * @param bool $motherAndChild
      */
     public function setMotherAndChild($motherAndChild)
     {
@@ -81,7 +79,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isConsultingAgreement()
     {
@@ -89,7 +87,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @param boolean $consultingAgreement
+     * @param bool $consultingAgreement
      */
     public function setConsultingAgreement($consultingAgreement)
     {
@@ -97,7 +95,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isPndConsulting()
     {
@@ -105,7 +103,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @param boolean $pndConsulting
+     * @param bool $pndConsulting
      */
     public function setPndConsulting($pndConsulting)
     {
@@ -113,7 +111,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @return boolean
+     * @return bool
      */
     public function isUseCoordinates()
     {
@@ -121,13 +119,10 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     }
 
     /**
-     * @param boolean $useCoordinates
+     * @param bool $useCoordinates
      */
     public function setUseCoordinates($useCoordinates)
     {
         $this->useCoordinates = $useCoordinates;
     }
-
-
-
 }

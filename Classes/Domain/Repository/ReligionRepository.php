@@ -14,12 +14,9 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class ReligionRepository extends AbstractBaseRepository
@@ -29,5 +26,4 @@ class ReligionRepository extends AbstractBaseRepository
      * @var string
      */
     const TABLE = 'tx_bzgaberatungsstellensuche_domain_model_religion';
-
 }

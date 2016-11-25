@@ -14,12 +14,9 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer as BaseEntryNormalizer;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class EntryNormalizer
@@ -47,9 +44,9 @@ class EntryNormalizer
      * @param array $callbacks
      * @return array
      */
-    public function additionalCallbacks(array $callbacks = array())
+    public function additionalCallbacks(array $callbacks = [])
     {
-        $callbacks = array_merge($callbacks, array(
+        $callbacks = array_merge($callbacks, [
             'religiousDenomination' => function ($religionInputId) {
                 return $this->religionRepository->findOneByExternalId($religionInputId);
             },
@@ -59,11 +56,10 @@ class EntryNormalizer
             'pndConsultings' => function () {
                 return BaseEntryNormalizer::convertToObjectStorage($this->pndConsultingRepository, func_get_args());
             },
-        ));
+        ]);
 
-        return array(
+        return [
             'extendedCallbacks' => $callbacks,
-        );
+        ];
     }
-
 }

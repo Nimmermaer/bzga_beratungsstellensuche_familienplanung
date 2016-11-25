@@ -15,8 +15,6 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Domain\Model;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Entry;
 use SJBR\StaticInfoTables\Domain\Model\Language;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -59,5 +57,4 @@ class EntryTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame(implode(', ', [$english, $french, $whatever]), $this->subject->getPndAllLanguages());
     }
-
 }

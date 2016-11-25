@@ -4,39 +4,38 @@ if (!defined('TYPO3_MODE')) {
     die('Access denied.');
 }
 
-
-$fields = array(
-    'mother_and_child' => array(
+$fields = [
+    'mother_and_child' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.mother_and_child',
-        'config' => array(
+        'config' => [
             'type' => 'check',
-        ),
-    ),
-    'consulting_agreement' => array(
+        ],
+    ],
+    'consulting_agreement' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.consulting_agreement',
-        'config' => array(
+        'config' => [
             'type' => 'check',
-        ),
-    ),
-    'religious_denomination' => array(
+        ],
+    ],
+    'religious_denomination' => [
         'exclude' => 0,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.religious_denomination',
-        'config' => array(
+        'config' => [
             'type' => 'select',
-            'items' => array(
-                array('', 0),
-            ),
+            'items' => [
+                ['', 0],
+            ],
             'foreign_table' => 'tx_bzgaberatungsstellensuche_domain_model_religion',
             'minitems' => 0,
             'maxitems' => 1,
-        ),
-    ),
-    'pnd_consultings' => array(
+        ],
+    ],
+    'pnd_consultings' => [
         'exclude' => 0,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.pnd_consultings',
-        'config' => Array(
+        'config' => [
             'type' => 'select',
             'internal_type' => 'db',
             'allowed' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
@@ -46,25 +45,25 @@ $fields = array(
             'minitems' => 0,
             'maxitems' => 100,
             'MM' => 'tx_bzgaberatungsstellensuche_entry_pndconsulting_mm',
-            'wizards' => Array(
+            'wizards' => [
                 '_PADDING' => 0,
                 '_VERTICAL' => 1,
-            ),
-        ),
-    ),
-    'pnd_other_language' => array(
+            ],
+        ],
+    ],
+    'pnd_other_language' => [
         'exclude' => 0,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.pnd_other_language',
-        'config' => array(
+        'config' => [
             'type' => 'input',
             'size' => 30,
             'eval' => 'trim',
-        ),
-    ),
-    'pnd_languages' => array(
+        ],
+    ],
+    'pnd_languages' => [
         'exclude' => 0,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.pnd_languages',
-        'config' => Array(
+        'config' => [
             'type' => 'select',
             'internal_type' => 'db',
             'allowed' => 'static_languages',
@@ -73,13 +72,13 @@ $fields = array(
             'minitems' => 0,
             'maxitems' => 100,
             'MM' => 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm',
-            'wizards' => Array(
+            'wizards' => [
                 '_PADDING' => 0,
                 '_VERTICAL' => 1,
-            ),
-        ),
-    ),
-);
+            ],
+        ],
+    ],
+];
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_bzgaberatungsstellensuche_domain_model_entry',
     $fields);

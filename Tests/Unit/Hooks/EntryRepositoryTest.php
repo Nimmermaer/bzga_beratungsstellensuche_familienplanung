@@ -14,11 +14,10 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Hooks;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-use Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository;
+use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
 class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
 {
@@ -54,7 +53,6 @@ class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->assertNull($this->subject->modify($params));
     }
 
-
     /**
      * @test
      */
@@ -73,5 +71,4 @@ class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
 
         $this->subject->modify($params);
     }
-
 }

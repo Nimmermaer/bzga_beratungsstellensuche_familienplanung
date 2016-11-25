@@ -16,8 +16,6 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  */
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class EntryNameConverter
@@ -27,19 +25,19 @@ class EntryNameConverter
      * @param array $mapNames
      * @return array
      */
-    public function mapNames(array $mapNames = array())
+    public function mapNames(array $mapNames = [])
     {
-        $mapNames = array_merge($mapNames, array(
+        $mapNames = array_merge($mapNames, [
             'konfession' => 'religious_denomination',
             'pndberatunglangsons' => 'pnd_other_language',
             'mutterundkind' => 'mother_and_child',
             'beratungsschein' => 'consulting_agreement',
             'pndberatunglang' => 'pnd_languages',
             'pndberatung' => 'pnd_consultings',
-        ));
+        ]);
 
-        return array(
+        return [
             'extendedMapNames' => $mapNames,
-        );
+        ];
     }
 }

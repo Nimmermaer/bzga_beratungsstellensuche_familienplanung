@@ -14,15 +14,12 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
-use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
 use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Serializer as BaseSerializer;
+use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class Importer
@@ -56,7 +53,5 @@ class Importer
 
         $this->pndConsultingManager->persist();
         $this->religionManager->persist();
-
     }
-
 }

@@ -15,19 +15,16 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model;
  *
  * The TYPO3 project - inspiring people to share!
  */
-
 use SJBR\StaticInfoTables\Domain\Model\AbstractEntity;
 
 /**
- * @package TYPO3
- * @subpackage bzga_beratungsstellensuche_familienplanung
  * @author Sebastian Schreiber
  */
 class Language extends AbstractEntity
 {
 
     /**
-     * @var integer
+     * @var int
      */
     protected $pndExternalId;
 
@@ -46,6 +43,4 @@ class Language extends AbstractEntity
     {
         $this->pndExternalId = $pndExternalId;
     }
-
-
 }
