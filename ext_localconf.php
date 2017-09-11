@@ -6,15 +6,18 @@ if (!defined('TYPO3_MODE')) {
 }
 
 call_user_func(function ($packageKey) {
+
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:bzga_beratungsstellensuche/Resources/Private/Language/locallang.xlf'][] = 'EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang.xlf';
+
     \Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::registerExtensionKey($packageKey, 60);
 
-# Template layout configuration
+    # Template layout configuration
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bzga_beratungsstellensuche_familienplanung/Configuration/TSconfig/Beratungsstellensuche.txt">');
 
     /** @var \TYPO3\CMS\Extbase\SignalSlot\Dispatcher $signalSlotDispatcher */
     $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
 
-// Extend name converter
+    # Extend name converter
     $signalSlotDispatcher->connect(
         \Bzga\BzgaBeratungsstellensuche\Domain\Serializer\NameConverter\EntryNameConverter::class,
         \Bzga\BzgaBeratungsstellensuche\Events::SIGNAL_MAP_NAMES,
@@ -29,7 +32,7 @@ call_user_func(function ($packageKey) {
         'additionalCallbacks'
     );
 
-// Extend Importer
+    # Extend Importer
     $signalSlotDispatcher->connect(
         \Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter::class,
         \Bzga\BzgaBeratungsstellensuche\Events::PRE_IMPORT_SIGNAL,
@@ -37,7 +40,7 @@ call_user_func(function ($packageKey) {
         'preImport'
     );
 
-// Extend list view
+    # Extend list view
     $signalSlotDispatcher->connect(
         \Bzga\BzgaBeratungsstellensuche\Controller\EntryController::class,
         \Bzga\BzgaBeratungsstellensuche\Events::LIST_ACTION_SIGNAL,
@@ -45,7 +48,7 @@ call_user_func(function ($packageKey) {
         'listAction'
     );
 
-// Extend form view
+    # Extend form view
     $signalSlotDispatcher->connect(
         \Bzga\BzgaBeratungsstellensuche\Controller\EntryController::class,
         \Bzga\BzgaBeratungsstellensuche\Events::FORM_ACTION_SIGNAL,
@@ -60,11 +63,11 @@ call_user_func(function ($packageKey) {
         'truncate'
     );
 
-// Extend the demand query
+    # Extend the demand query
     $GLOBALS['TYPO3_CONF_VARS']['EXT']['bzga_beratungsstellensuche']['Domain/Repository/EntryRepository.php']['findDemanded'][]
         = 'EXT:bzga_beratungsstellensuche_essstoerungen/Classes/Hooks/EntryRepository.php:Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Hooks\\EntryRepository->modify';
 
-# Extend the form fields in flexforms
+    # Extend the form fields in flexforms
     $fields = [
         [
             'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.religion',

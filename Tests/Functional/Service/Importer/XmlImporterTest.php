@@ -109,7 +109,7 @@ class XmlImporterTest extends FunctionalTestCase
         $this->assertEquals(3, $this->getDatabaseConnection()->exec_SELECTcountRows('*', 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting'));
         $this->assertEquals(3, $this->getDatabaseConnection()->exec_SELECTcountRows('*', 'tx_bzgaberatungsstellensuche_domain_model_religion'));
         $this->assertEquals(1, $this->getDatabaseConnection()->exec_SELECTcountRows('*', 'tx_bzgaberatungsstellensuche_domain_model_entry'));
-        $this->assertEquals(2, $this->getDatabaseConnection()->exec_SELECTcountRows('*', 'tx_bzgaberatungsstellensuche_entry_pndconsulting_mm'));
+        $this->assertEquals(2, $this->getDatabaseConnection()->exec_SELECTcountRows('*', 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm'));
         $this->assertEquals(2, $this->getDatabaseConnection()->exec_SELECTcountRows('*', 'tx_bzgaberatungsstellensuche_entry_category_mm'));
     }
 
