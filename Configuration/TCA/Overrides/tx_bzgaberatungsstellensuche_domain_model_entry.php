@@ -24,6 +24,7 @@ $fields = [
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.religious_denomination',
         'config' => [
             'type' => 'select',
+            'renderType' => 'selectSingle',
             'items' => [
                 ['', 0],
             ],
@@ -37,6 +38,7 @@ $fields = [
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.pnd_consultings',
         'config' => [
             'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
             'internal_type' => 'db',
             'allowed' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
             'foreign_table' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
@@ -65,6 +67,7 @@ $fields = [
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.pnd_languages',
         'config' => [
             'type' => 'select',
+            'renderType' => 'selectMultipleSideBySide',
             'internal_type' => 'db',
             'allowed' => 'static_languages',
             'foreign_table' => 'static_languages',
