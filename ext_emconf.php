@@ -18,9 +18,9 @@ $EM_CONF[$_EXTKEY] = [
         'conflicts' => [],
     ],
     'autoload' => [
-        'classmap' => ['Classes']
+        'psr-4' => ['Bzga\\BzgaBeratungsstellensucheFamilienplanung\\' => 'Classes']
     ],
     'autoload-dev' => [
-        'classmap' => ['Tests']
+        'psr-4' => ['Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Tests\\' => 'Tests']
     ],
 ];
