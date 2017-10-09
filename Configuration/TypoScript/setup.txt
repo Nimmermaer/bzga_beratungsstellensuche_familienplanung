@@ -1,8 +1,15 @@
 plugin.tx_bzgaberatungsstellensuche {
-    # Modify the translation
-    _LOCAL_LANG {
-        default {
+    view {
+        templateRootPaths {
+            10 = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Templates/
+        }
 
+        partialRootPaths {
+            10 = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Partials/
+        }
+
+        layoutRootPaths {
+            10 = EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Layouts/
         }
     }
 }
