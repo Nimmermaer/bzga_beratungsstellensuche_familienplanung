@@ -45,10 +45,10 @@ class Importer
      */
     public function preImport(XmlImporter $importer, \SimpleXMLIterator $sxe, $pid, BaseSerializer $serializer)
     {
-        # Import religions
+        // Import religions
         $importer->convertRelations($sxe->konfessionen->konfession, $this->religionManager, Religion::class, $pid);
 
-        # Import pnd beratungen
+        // Import pnd beratungen
         $importer->convertRelations($sxe->pndberatungen->pndberatung, $this->pndConsultingManager, PndConsulting::class, $pid);
 
         $this->pndConsultingManager->persist();

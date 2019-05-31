@@ -38,8 +38,10 @@ class ext_update
         $databaseUpdateUtility = $objectManager->get(DatabaseUpdateUtility::class);
         $databaseUpdateUtility->doUpdate('bzga_beratungsstellensuche_familienplanung');
 
-        $content .= '<p>' . LocalizationUtility::translate('updateLanguageLabels',
-                'StaticInfoTables') . ' bzga_beratungsstellensuche_familienplanung.</p>';
+        $content .= '<p>' . LocalizationUtility::translate(
+            'updateLanguageLabels',
+                'StaticInfoTables'
+        ) . ' bzga_beratungsstellensuche_familienplanung.</p>';
 
         return $content;
     }

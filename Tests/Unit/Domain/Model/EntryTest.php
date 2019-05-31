@@ -28,7 +28,6 @@ class EntryTest extends \PHPUnit_Framework_TestCase
     private $subject;
 
     /**
-     * @return void
      */
     protected function setUp()
     {

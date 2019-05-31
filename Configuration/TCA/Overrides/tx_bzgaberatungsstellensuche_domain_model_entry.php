@@ -83,7 +83,13 @@ $fields = [
     ],
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns('tx_bzgaberatungsstellensuche_domain_model_entry',
-    $fields);
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_bzgaberatungsstellensuche_domain_model_entry',
-    implode(',', array_keys($fields)), '', 'after:categories');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'tx_bzgaberatungsstellensuche_domain_model_entry',
+    $fields
+);
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes(
+    'tx_bzgaberatungsstellensuche_domain_model_entry',
+    implode(',', array_keys($fields)),
+    '',
+    'after:categories'
+);
