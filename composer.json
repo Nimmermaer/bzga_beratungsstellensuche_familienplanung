@@ -3,6 +3,8 @@
   "type": "typo3-cms-extension",
   "description": "Beratungsstellensuche der BZgA für den Bereich Schwangerschaft",
   "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "vcs",
@@ -34,7 +36,7 @@
   "require": {
     "typo3/cms-core": "^8.7",
     "php": ">=7.0.0",
-    "bzga/bzga-beratungsstellensuche": "^8.7.x-dev"
+    "bzga/bzga-beratungsstellensuche": "8.7.*"
   },
   "require-dev": {
     "friendsofphp/php-cs-fixer": "^2.0",
