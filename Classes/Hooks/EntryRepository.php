@@ -51,6 +51,10 @@ class EntryRepository
             $constraints[] = $query->equals('motherAndChild', 1);
         }
 
+        if ($demand->isContraceptiveCosts()) {
+            $constraints[] = $query->equals('contraceptiveCosts', 1);
+        }
+
         if ($demand->isConsultingAgreement()) {
             $constraints[] = $query->equals('consultingAgreement', 1);
         }

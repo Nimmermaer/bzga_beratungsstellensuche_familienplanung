@@ -36,6 +36,11 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @var bool
      */
+    protected $contraceptiveCosts = false;
+
+    /**
+     * @var bool
+     */
     protected $consultingAgreement = false;
 
     /**
@@ -168,6 +173,22 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     public function setMotherAndChild($motherAndChild)
     {
         $this->motherAndChild = (boolean)$motherAndChild;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getContraceptiveCosts(): bool
+    {
+        return $this->contraceptiveCosts;
+    }
+
+    /**
+     * @param bool $contraceptiveCosts
+     */
+    public function setContraceptiveCosts(bool $contraceptiveCosts)
+    {
+        $this->contraceptiveCosts = $contraceptiveCosts;
     }
 
     /**

@@ -84,6 +84,10 @@ call_user_func(function ($packageKey) {
             'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.motherAndChild',
             'motherAndChild',
         ],
+        [
+            'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_be.xlf:flexforms_additional.formFields.contraceptiveCosts',
+            'contraceptiveCosts',
+        ],
     ];
     \Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFormFields($fields);
 }, 'bzga_beratungsstellensuche_familienplanung');

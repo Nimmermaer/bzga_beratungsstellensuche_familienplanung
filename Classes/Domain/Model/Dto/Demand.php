@@ -34,6 +34,11 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     /**
      * @var bool
      */
+    protected $contraceptiveCosts = false;
+
+    /**
+     * @var bool
+     */
     protected $consultingAgreement = false;
 
     /**
@@ -76,6 +81,22 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     public function setMotherAndChild($motherAndChild)
     {
         $this->motherAndChild = $motherAndChild;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isContraceptiveCosts(): bool
+    {
+        return $this->contraceptiveCosts;
+    }
+
+    /**
+     * @param bool $contraceptiveCosts
+     */
+    public function setContraceptiveCosts(bool $contraceptiveCosts)
+    {
+        $this->contraceptiveCosts = $contraceptiveCosts;
     }
 
     /**

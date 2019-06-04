@@ -16,6 +16,9 @@
             <trans-unit id="flexforms_additional.formFields.motherAndChild" xml:space="preserve">
                 <source>Mutter und Kind</source>
             </trans-unit>
+            <trans-unit id="flexforms_additional.formFields.contraceptiveCosts" xml:space="preserve">
+                <source>Kostenübernahme Verhütungsmittel</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

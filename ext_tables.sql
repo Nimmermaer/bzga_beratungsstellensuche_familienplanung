@@ -4,6 +4,7 @@
 CREATE TABLE tx_bzgaberatungsstellensuche_domain_model_entry (
   religious_denomination int(11) unsigned DEFAULT '0',
   mother_and_child tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  contraceptive_costs tinyint(4) unsigned DEFAULT '0' NOT NULL,
   consulting_agreement tinyint(4) unsigned DEFAULT '0' NOT NULL,
   pnd_consultings int(11) unsigned DEFAULT '0',
   pnd_languages int(11) unsigned DEFAULT '0',

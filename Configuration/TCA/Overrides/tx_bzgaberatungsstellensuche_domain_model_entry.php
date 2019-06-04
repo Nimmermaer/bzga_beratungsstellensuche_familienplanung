@@ -12,6 +12,13 @@ $fields = [
             'type' => 'check',
         ],
     ],
+    'contraceptive_costs' => [
+        'exclude' => 1,
+        'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.contraceptive_costs',
+        'config' => [
+            'type' => 'check',
+        ],
+    ],
     'consulting_agreement' => [
         'exclude' => 1,
         'label' => 'LLL:EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang_db.xlf:tx_bzgaberatungsstellensuche_domain_model_entry.consulting_agreement',

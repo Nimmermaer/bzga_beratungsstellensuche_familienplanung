@@ -23,13 +23,22 @@
 				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die über Beraterinnen und Berater mit spezieller Zusatzqualifikation im Bereich Pränataldiagnostik verfügen und sich als Schwerpunktberatungsstellen für Pränataldiagnostik verstehen.</source>
 			</trans-unit>
 			<trans-unit id="mother-and-child-form-label" xml:space="preserve">
-				<source>Vergabe von Mitteln der Bundesstiftung Mutter und Kind</source>
+				<source>Beantragung von Mitteln der Bundesstiftung Mutter und Kind</source>
 			</trans-unit>
 			<trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
 				<source>Warum ist die Angabe des Bundeslandes wichtig?</source>
 			</trans-unit>
 			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
 				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die Mittel der „Bundesstiftung Mutter und Kind“ vergeben. Beachten Sie: Finanzielle Unterstützung kann nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem Sie Ihren Wohnsitz haben.</source>
+			</trans-unit>
+			<trans-unit id="contraceptive-costs-form-label" xml:space="preserve">
+				<source>Kostenübernahme von Verhütungsmitteln</source>
+			</trans-unit>
+			<trans-unit id="contraceptive-costs-notice-headline" xml:space="preserve">
+				<source>Kostenübernahme Verhütungsmittel</source>
+			</trans-unit>
+			<trans-unit id="contraceptive-costs-notice-body" xml:space="preserve">
+				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, bei denen Frauen mit geringem Einkommen eine Kostenübernahme für Verhütungsmittel beantragen können (z.B. aus einem Sonderfonds der Kommune oder aus Modellprojekten). Über die genauen Regelungen und Möglichkeiten informieren die Beratungsstellen.</source>
 			</trans-unit>
 			<trans-unit id="religions-form-label" xml:space="preserve">
 				<source>Konfession</source>

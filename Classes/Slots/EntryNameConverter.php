@@ -31,6 +31,7 @@ class EntryNameConverter
             'konfession' => 'religious_denomination',
             'pndberatunglangsons' => 'pnd_other_language',
             'mutterundkind' => 'mother_and_child',
+            'kostenuebernahme_verhuetung' => 'contraceptive_costs',
             'beratungsschein' => 'consulting_agreement',
             'pndberatunglang' => 'pnd_languages',
             'pndberatung' => 'pnd_consultings',

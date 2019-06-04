@@ -30,6 +30,9 @@
 			<trans-unit id="tx_bzgaberatungsstellensuche_domain_model_pndconsulting" xml:space="preserve">
 				<source>PND-Beratung</source>
 			</trans-unit>
+            <trans-unit id="tx_bzgaberatungsstellensuche_domain_model_entry.contraceptive_costs" xml:space="preserve">
+				<source>Kostenübernahme Verhütungsmittel</source>
+			</trans-unit>
 		</body>
 	</file>
 </xliff>
