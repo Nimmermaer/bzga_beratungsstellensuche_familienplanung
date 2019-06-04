@@ -11,7 +11,7 @@
 				<source>Hinweis</source>
 			</trans-unit>
 			<trans-unit id="consulting-agreement-notice-body" xml:space="preserve">
-				<source>Wenn Sie hier ein Häkchen setzen, werden alle Beratungsstellen angezeigt, die einen Beratungsschein ausstellen. Der Beratungsschein ist eine gesetzlich vorgeschriebene Voraussetzung für einen straffreien Schwangerschaftsabbruch. Zum Hintergrund: In dieser Datenbank finden Sie zum einen Beratungsstellen, die eine staatliche Anerkennung nach den §§ 5 und 6 des Schwangerschaftskonfliktgesetztes (SchKG) haben und deshalb einen Beratungsschein ausstellen. Zum anderen werden Beratungsstellen angezeigt, die nach § 2 SchKG beraten, staatlich gefördert werden, aber keinen Beratungsschein ausgeben.</source>
+				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die einen Beratungsschein ausstellen. Der Beratungsschein ist Voraussetzung für einen straffreien Schwangerschaftsabbruch nach der Beratungsregelung.</source>
 			</trans-unit>
 			<trans-unit id="consulting-agreement-pnd-form-label" xml:space="preserve">
 				<source>Beratung zu Pränataldiagnostik</source>
@@ -20,7 +20,7 @@
 				<source>Hinweis</source>
 			</trans-unit>
 			<trans-unit id="consulting-agreement-pnd-notice-body" xml:space="preserve">
-				<source>Beratungsstellen, die über Beraterinnen und Berater mit spezieller Zusatzqualifikation im Bereich Pränataldiagnostik verfügen und sich als Schwerpunktberatungsstellen für Pränataldiagnostik verstehen.</source>
+				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die über Beraterinnen und Berater mit spezieller Zusatzqualifikation im Bereich Pränataldiagnostik verfügen und sich als Schwerpunktberatungsstellen für Pränataldiagnostik verstehen.</source>
 			</trans-unit>
 			<trans-unit id="mother-and-child-form-label" xml:space="preserve">
 				<source>Vergabe von Mitteln der Bundesstiftung Mutter und Kind</source>
@@ -29,7 +29,7 @@
 				<source>Warum ist die Angabe des Bundeslandes wichtig?</source>
 			</trans-unit>
 			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
-				<source>Die Mittel der „Bundesstiftung Mutter und Kind“ werden über Stiftungen in den Bundesländern vergeben. Finanzielle Unterstützung kann deshalb nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem auch der eigene Wohnsitz liegt.</source>
+				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die Mittel der „Bundesstiftung Mutter und Kind“ vergeben. Beachten Sie: Finanzielle Unterstützung kann nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem Sie Ihren Wohnsitz haben.</source>
 			</trans-unit>
 			<trans-unit id="religions-form-label" xml:space="preserve">
 				<source>Konfession</source>
@@ -42,15 +42,6 @@
 			</trans-unit>
 			<trans-unit id="mother-and-child" xml:space="preserve">
 				<source>Über diese Beratungsstelle können Mittel der "Bundesstiftung Mutter und Kind" vergeben werden.</source>
-			</trans-unit>
-			<trans-unit id="consulting-agreement" xml:space="preserve">
-				<source>Diese Beratungsstelle vergibt einen Beratungsschein nach §§5 und 6 des Schwangerschaftkonfliktgesetzes (SchKG).</source>
-			</trans-unit>
-			<trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
-				<source>Warum ist die Angabe des Bundeslandes wichtig?</source>
-			</trans-unit>
-			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
-				<source>Die Mittel der „Bundesstiftung Mutter und Kind“ werden über Stiftungen in den Bundesländern vergeben. Finanzielle Unterstützung kann deshalb nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem auch der eigene Wohnsitz liegt.</source>
 			</trans-unit>
 			<trans-unit id="consulting-agreement" xml:space="preserve">
 				<source>Beratungsschein</source>
