@@ -16,10 +16,11 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Entry;
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 use SJBR\StaticInfoTables\Domain\Model\Language;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
-class EntryTest extends \PHPUnit_Framework_TestCase
+class EntryTest extends UnitTestCase
 {
 
     /**
@@ -43,9 +44,9 @@ class EntryTest extends \PHPUnit_Framework_TestCase
         $english = 'Englisch';
         $whatever = 'Whatever';
 
-        $frenchLanguage = $this->getMock(Language::class);
+        $frenchLanguage = $this->getMockBuilder(Language::class)->getMock();
         $frenchLanguage->expects($this->once())->method('getNameLocalized')->willReturn($french);
-        $englishLanguage = $this->getMock(Language::class);
+        $englishLanguage = $this->getMockBuilder(Language::class)->getMock();
         $englishLanguage->expects($this->once())->method('getNameLocalized')->willReturn($english);
 
         $languages = new ObjectStorage();

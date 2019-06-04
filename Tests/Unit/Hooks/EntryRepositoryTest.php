@@ -17,9 +17,10 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Hooks;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository;
+use Nimut\TestingFramework\TestCase\UnitTestCase;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 
-class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
+class EntryRepositoryTest extends UnitTestCase
 {
 
     /**
@@ -47,7 +48,7 @@ class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function modifyReturnNullNoQueryDefined()
     {
-        $demand = $this->getMock(Demand::class);
+        $demand = $this->getMockBuilder(Demand::class)->getMock();
         $params = ['demand' => $demand];
         $this->assertNull($this->subject->modify($params));
     }
@@ -57,9 +58,9 @@ class EntryRepositoryTest extends \PHPUnit_Framework_TestCase
      */
     public function modifyAllConstraintsSet()
     {
-        $religion = $this->getMock(Religion::class);
-        $demand = $this->getMock(Demand::class);
-        $query = $this->getMock(QueryInterface::class);
+        $religion = $this->getMockBuilder(Religion::class)->getMock();
+        $demand = $this->getMockBuilder(Demand::class)->getMock();
+        $query = $this->getMockBuilder(QueryInterface::class)->getMock();
         $query->expects($this->exactly(3))->method('equals')->willReturn(null);
 
         $params = ['demand' => $demand, 'query' => $query, 'constraints' => []];
