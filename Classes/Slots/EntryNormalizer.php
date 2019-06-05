@@ -15,6 +15,9 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  * The TYPO3 project - inspiring people to share!
  */
 use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer as BaseEntryNormalizer;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
+use SJBR\StaticInfoTables\Domain\Repository\LanguageRepository;
 
 /**
  * @author Sebastian Schreiber
@@ -23,28 +26,40 @@ class EntryNormalizer
 {
 
     /**
-     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
-     * @inject
+     * @var ReligionRepository
      */
     protected $religionRepository;
 
     /**
-     * @var \SJBR\StaticInfoTables\Domain\Repository\LanguageRepository
-     * @inject
+     * @var LanguageRepository
      */
     protected $languageRepository;
 
     /**
-     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
-     * @inject
+     * @var PndConsultingRepository
      */
     protected $pndConsultingRepository;
+
+    public function injectReligionRepository(ReligionRepository $religionRepository)
+    {
+        $this->religionRepository = $religionRepository;
+    }
+
+    public function injectLanguageRepository(LanguageRepository $languageRepository)
+    {
+        $this->languageRepository = $languageRepository;
+    }
+
+    public function injectPndConsultingRepository(PndConsultingRepository $pndConsultingRepository)
+    {
+        $this->pndConsultingRepository = $pndConsultingRepository;
+    }
 
     /**
      * @param array $callbacks
      * @return array
      */
-    public function additionalCallbacks(array $callbacks = [])
+    public function additionalCallbacks(array $callbacks = []): array
     {
         $callbacks = array_merge($callbacks, [
             'religiousDenomination' => function ($religionInputId) {

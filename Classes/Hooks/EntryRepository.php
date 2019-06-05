@@ -31,15 +31,15 @@ class EntryRepository
      */
     public function modify(array $params)
     {
-        $demand = isset($params['demand']) ? $params['demand'] : null;
-        /* @var $demand Demand|BaseDemand */
+        $demand = $params['demand'] ?? null;
+        /** @var $demand Demand|BaseDemand */
 
         if (!$demand instanceof BaseDemand) {
             return;
         }
 
-        $query = isset($params['query']) ? $params['query'] : null;
-        /* @var $query QueryInterface */
+        $query = $params['query'] ?? null;
+        /** @var $query QueryInterface */
         if (!$query instanceof QueryInterface) {
             return;
         }
@@ -61,10 +61,6 @@ class EntryRepository
 
         if ($religion = $demand->getReligion()) {
             $constraints[] = $query->equals('religiousDenomination', $religion);
-        }
-
-        if ($demand->isPndConsulting()) {
-            // @TODO: Implement logic of MM-Relation
         }
     }
 }

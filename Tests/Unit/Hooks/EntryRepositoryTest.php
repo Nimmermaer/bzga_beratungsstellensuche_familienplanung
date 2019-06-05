@@ -67,7 +67,6 @@ class EntryRepositoryTest extends UnitTestCase
         $demand->expects($this->once())->method('isMotherAndChild')->willReturn(true);
         $demand->expects($this->once())->method('isConsultingAgreement')->willReturn(true);
         $demand->expects($this->once())->method('getReligion')->willReturn($religion);
-        $demand->expects($this->once())->method('isPndConsulting')->willReturn(true);
 
         $this->subject->modify($params);
     }

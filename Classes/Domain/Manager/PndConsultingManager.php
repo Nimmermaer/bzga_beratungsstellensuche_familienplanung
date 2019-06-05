@@ -15,6 +15,7 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager;
  * The TYPO3 project - inspiring people to share!
  */
 use Bzga\BzgaBeratungsstellensuche\Domain\Manager\AbstractManager;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
 
 /**
  * @author Sebastian Schreiber
@@ -23,15 +24,20 @@ class PndConsultingManager extends AbstractManager
 {
 
     /**
-     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
+     * @var PndConsultingRepository
      * @inject
      */
     protected $repository;
 
+    public function injectRepository(PndConsultingRepository $repository)
+    {
+        $this->repository = $repository;
+    }
+
     /**
-     * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository
+     * @return PndConsultingRepository
      */
-    public function getRepository()
+    public function getRepository():PndConsultingRepository
     {
         return $this->repository;
     }

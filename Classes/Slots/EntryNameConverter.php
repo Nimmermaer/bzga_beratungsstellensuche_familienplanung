@@ -25,7 +25,7 @@ class EntryNameConverter
      * @param array $mapNames
      * @return array
      */
-    public function mapNames(array $mapNames = [])
+    public function mapNames(array $mapNames = []): array
     {
         $mapNames = array_merge($mapNames, [
             'konfession' => 'religious_denomination',

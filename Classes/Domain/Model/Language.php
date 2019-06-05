@@ -31,9 +31,9 @@ class Language extends AbstractEntity
     /**
      * @return int
      */
-    public function getPndExternalId()
+    public function getPndExternalId(): int
     {
-        return $this->pndExternalId;
+        return (int)$this->pndExternalId;
     }
 
     /**

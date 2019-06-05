@@ -2,6 +2,8 @@
 
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
+
 /**
  * This file is part of the TYPO3 CMS project.
  *
@@ -22,16 +24,21 @@ class EntryController
 {
 
     /**
-     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository
-     * @inject
+     * @var ReligionRepository
      */
     protected $religionRepository;
+
+
+    public function injectReligionRepository(ReligionRepository $religionRepository)
+    {
+        $this->religionRepository = $religionRepository;
+    }
 
     /**
      * @param array $variables
      * @return array
      */
-    public function listAction(array $variables = [])
+    public function listAction(array $variables = []): array
     {
         $religions = $this->religionRepository->findAll();
 

@@ -61,7 +61,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @var string
      */
-    protected $pndAllLanguages = null;
+    protected $pndAllLanguages;
 
     /**
      * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\SJBR\StaticInfoTables\Domain\Model\Language>
