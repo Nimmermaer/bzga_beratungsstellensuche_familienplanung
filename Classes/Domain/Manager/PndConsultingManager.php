@@ -25,10 +25,12 @@ class PndConsultingManager extends AbstractManager
 
     /**
      * @var PndConsultingRepository
-     * @inject
      */
     protected $repository;
 
+    /**
+     * @param PndConsultingRepository $repository
+     */
     public function injectRepository(PndConsultingRepository $repository)
     {
         $this->repository = $repository;
@@ -37,7 +39,7 @@ class PndConsultingManager extends AbstractManager
     /**
      * @return PndConsultingRepository
      */
-    public function getRepository():PndConsultingRepository
+    public function getRepository(): PndConsultingRepository
     {
         return $this->repository;
     }

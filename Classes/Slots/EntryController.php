@@ -28,7 +28,6 @@ class EntryController
      */
     protected $religionRepository;
 
-
     public function injectReligionRepository(ReligionRepository $religionRepository)
     {
         $this->religionRepository = $religionRepository;

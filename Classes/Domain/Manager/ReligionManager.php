@@ -28,7 +28,9 @@ class ReligionManager extends AbstractManager
      */
     protected $repository;
 
-
+    /**
+     * @param ReligionRepository $repository
+     */
     public function injectRepository(ReligionRepository $repository)
     {
         $this->repository = $repository;
@@ -37,7 +39,7 @@ class ReligionManager extends AbstractManager
     /**
      * @return ReligionRepository
      */
-    public function getRepository():ReligionRepository
+    public function getRepository(): ReligionRepository
     {
         return $this->repository;
     }
