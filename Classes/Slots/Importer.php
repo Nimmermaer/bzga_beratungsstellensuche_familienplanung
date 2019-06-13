@@ -16,8 +16,11 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  */
 use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Serializer as BaseSerializer;
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\PndConsultingManager;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\ReligionManager;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
+use SimpleXMLIterator;
 
 /**
  * @author Sebastian Schreiber
@@ -26,24 +29,32 @@ class Importer
 {
 
     /**
-     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\ReligionManager
-     * @inject
+     * @var ReligionManager
      */
     protected $religionManager;
 
     /**
-     * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\PndConsultingManager
-     * @inject
+     * @var PndConsultingManager
      */
     protected $pndConsultingManager;
 
+    public function injectReligionManager(ReligionManager $religionManager)
+    {
+        $this->religionManager = $religionManager;
+    }
+
+    public function injectPndConsultingManager(PndConsultingManager $pndConsultingManager)
+    {
+        $this->pndConsultingManager = $pndConsultingManager;
+    }
+
     /**
      * @param XmlImporter $importer
-     * @param \SimpleXMLIterator $sxe
+     * @param SimpleXMLIterator $sxe
      * @param $pid
      * @param BaseSerializer $serializer
      */
-    public function preImport(XmlImporter $importer, \SimpleXMLIterator $sxe, $pid, BaseSerializer $serializer)
+    public function preImport(XmlImporter $importer, SimpleXMLIterator $sxe, $pid, BaseSerializer $serializer)
     {
         // Import religions
         $importer->convertRelations($sxe->konfessionen->konfession, $this->religionManager, Religion::class, $pid);

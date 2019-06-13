@@ -114,7 +114,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @return string
      */
-    public function getPndAllLanguages()
+    public function getPndAllLanguages(): string
     {
         if (null === $this->pndAllLanguages) {
             if ($this->pndLanguages || $this->pndOtherLanguage) {
@@ -162,7 +162,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @return bool
      */
-    public function getMotherAndChild()
+    public function getMotherAndChild(): bool
     {
         return $this->motherAndChild;
     }
@@ -170,9 +170,9 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param bool $motherAndChild
      */
-    public function setMotherAndChild($motherAndChild)
+    public function setMotherAndChild(bool $motherAndChild)
     {
-        $this->motherAndChild = (boolean)$motherAndChild;
+        $this->motherAndChild = $motherAndChild;
     }
 
     /**
