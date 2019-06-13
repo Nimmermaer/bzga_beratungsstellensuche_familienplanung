@@ -44,7 +44,7 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
     /**
      * @var bool
      */
-    protected $pndConsulting;
+    protected $pndConsulting = false;
 
     /**
      * @var bool
