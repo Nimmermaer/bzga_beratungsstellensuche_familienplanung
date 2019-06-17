@@ -59,13 +59,23 @@ class XmlImporterTest extends FunctionalTestCase
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = ['typo3conf/ext/bzga_beratungsstellensuche_familienplanung', 'typo3conf/ext/bzga_beratungsstellensuche', 'typo3conf/ext/static_info_tables'];
+    protected $testExtensionsToLoad = ['typo3conf/ext/bzga_beratungsstellensuche_familienplanung', 'typo3conf/ext/bzga_beratungsstellensuche', 'typo3conf/ext/static_info_tables', 'typo3conf/ext/static_info_tables_de'];
 
     /**
      * @var array
      */
     protected $additionalFoldersToCreate = [
         'fileadmin/user_upload/tx_bzgaberatungsstellensuche'
+    ];
+
+    /**
+     * To prevent some false/positive sql failures
+     * @var array
+     */
+    protected $configurationToUseInTestInstance = [
+        'SYS' => [
+            'setDBinit' => 'SET SESSION sql_mode = \'\';',
+        ]
     ];
 
     /**
@@ -83,12 +93,6 @@ class XmlImporterTest extends FunctionalTestCase
         $this->importDataSet('ntf://Database/pages.xml');
         $this->importDataSet('ntf://Database/sys_file_storage.xml');
         $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
-
-        /** @var UpdateScriptUtility $updateUtility */
-        $updateUtility = GeneralUtility::makeInstance(UpdateScriptUtility::class);
-        $updateUtility->executeUpdateIfNeeded('static_info_tables');
-        $updateUtility->executeUpdateIfNeeded('bzga_beratungsstellensuche');
-        $updateUtility->executeUpdateIfNeeded('bzga_beratungsstellensuche_familienplanung');
     }
 
     /**

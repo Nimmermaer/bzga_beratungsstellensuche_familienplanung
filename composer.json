@@ -1,69 +1,71 @@
 {
-  "name": "bzga/bzga-beratungsstellensuche-familienplanung",
-  "type": "typo3-cms-extension",
-  "description": "Beratungsstellensuche der BZgA für den Bereich Schwangerschaft",
-  "license": "GPL-2.0+",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/sabbelasichon/bzga_beratungsstellensuche.git"
-    }
-  ],
-  "authors": [
-    {
-      "name": "Sebastian Schreiber",
-      "email": "ssch@hauptweg-nebenwege.de",
-      "role": "Developer"
+    "name": "bzga/bzga-beratungsstellensuche-familienplanung",
+    "type": "typo3-cms-extension",
+    "description": "Beratungsstellensuche der BZgA für den Bereich Schwangerschaft",
+    "license": "GPL-2.0+",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sabbelasichon/bzga_beratungsstellensuche.git"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Sebastian Schreiber",
+            "email": "ssch@hauptweg-nebenwege.de",
+            "role": "Developer"
+        },
+        {
+            "name": "Sebastian Hebler",
+            "email": "sh@hauptweg-nebenwege.de",
+            "role": "Projectmanager"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Bzga\\BzgaBeratungsstellensucheFamilienplanung\\": "Classes/"
+        }
     },
-    {
-      "name": "Sebastian Hebler",
-      "email": "sh@hauptweg-nebenwege.de",
-      "role": "Projectmanager"
-    }
-  ],
-  "autoload": {
-    "psr-4": {
-      "Bzga\\BzgaBeratungsstellensucheFamilienplanung\\": "Classes/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Tests\\": "Tests/"
-    }
-  },
-  "require": {
-    "typo3/cms-core": "^8.7",
-    "php": ">=7.0.0",
-    "bzga/bzga-beratungsstellensuche": "8.7.*",
-    "ext-simplexml": "*"
-  },
-  "require-dev": {
-    "friendsofphp/php-cs-fixer": "^2.0",
-    "nimut/testing-framework": "^1.0 || ^2.0 || ^3.0 || ^4.0"
-  },
-  "replace": {
-    "bzga_beratungsstellensuche_familienplanung": "self.version",
-    "bzga/bzga-beratungsstellensuche-familienplanung": "self.version"
-  },
-  "config": {
-    "vendor-dir": ".Build/vendor",
-    "bin-dir": ".Build/bin"
-  },
-  "scripts": {
-    "post-autoload-dump": [
-      "mkdir -p .Build/Web/typo3conf/ext/",
-      "[ -L .Build/Web/typo3conf/ext/bzga_beratungsstellensuche_familienplanung ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/bzga_beratungsstellensuche_familienplanung"
-    ]
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "8.7.x-dev"
+    "autoload-dev": {
+        "psr-4": {
+            "Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Tests\\": "Tests/"
+        }
     },
-    "typo3/cms": {
-      "cms-package-dir": "{$vendor-dir}/typo3/cms",
-      "web-dir": ".Build/Web"
+    "require": {
+        "typo3/cms-core": "^8.7",
+        "php": ">=7.0.0",
+        "bzga/bzga-beratungsstellensuche": "8.7.*",
+        "ext-simplexml": "*"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.0",
+        "nimut/testing-framework": "^1.0 || ^2.0 || ^3.0 || ^4.0"
+    },
+    "replace": {
+        "bzga_beratungsstellensuche_familienplanung": "self.version",
+        "bzga/bzga-beratungsstellensuche-familienplanung": "self.version"
+    },
+    "config": {
+        "vendor-dir": ".Build/vendor"
+    },
+    "scripts": {
+        "link-extension": [
+            "@php -r 'is_dir($extFolder=__DIR__.\"/.Build/public/typo3conf/ext/\") || mkdir($extFolder, 0777, true);'",
+            "@php -r 'file_exists($extFolder=__DIR__.\"/.Build/public/typo3conf/ext/bzga_beratungsstellensuche_familienplanung\") || symlink(__DIR__,$extFolder);'"
+        ],
+        "post-autoload-dump": [
+            "@link-extension"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "8.7.x-dev"
+        },
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".Build/public"
+        }
     }
-  }
 }
