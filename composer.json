@@ -8,7 +8,8 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/sabbelasichon/bzga_beratungsstellensuche.git"
+            "url": "https://github.com/sabbelasichon/bzga_beratungsstellensuche.git",
+            "no-api": true
         }
     ],
     "authors": [
@@ -48,7 +49,10 @@
         "bzga/bzga-beratungsstellensuche-familienplanung": "self.version"
     },
     "config": {
-        "vendor-dir": ".Build/vendor"
+        "vendor-dir": ".Build/vendor",
+        "platform": {
+            "php": "7.0.33"
+        }
     },
     "scripts": {
         "link-extension": [

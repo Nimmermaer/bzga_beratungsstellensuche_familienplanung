@@ -3,9 +3,9 @@ language: php
 matrix:
   fast_finish: true
   include:
-    - php: 7.1
-      env: TYPO3_VERSION=^8
     - php: 7.0
+      env: TYPO3_VERSION=^8
+    - php: 7.1
       env: TYPO3_VERSION=^8
     - php: 7.2
       env: TYPO3_VERSION=^8
@@ -31,17 +31,15 @@ before_install:
 
 before_script:
   - phpenv config-rm xdebug.ini
-  - composer require typo3/minimal=$TYPO3_VERSION
-  - composer require typo3/cms-recordlist=$TYPO3_VERSION
+  - composer require typo3/minimal "$TYPO3_VERSION" $DEPENDENCIES_PREFERENCE
   # Restore composer.json
   - git checkout composer.json
-  - export TYPO3_PATH_WEB=.Build/public/
 
 script:
   - >
     echo;
     echo "Running unit tests";
-    .Build/bin/phpunit --colors -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit/
+    .Build/vendor/bin/phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/UnitTests.xml Tests/Unit/
 
   - >
     echo;
@@ -53,4 +51,5 @@ script:
     export typo3DatabaseHost="localhost";
     export typo3DatabaseUsername="root";
     export typo3DatabasePassword="";
-    find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu 'echo; echo "Running functional test suite {}"; .Build/bin/phpunit --colors  -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml {}'
+    export TYPO3_PATH_WEB=.Build/public/
+    find 'Tests/Functional' -wholename '*Test.php' | parallel --gnu 'echo; echo "Running functional test suite {}"; .Build/vendor/bin/phpunit -c .Build/vendor/nimut/testing-framework/res/Configuration/FunctionalTests.xml {}'
