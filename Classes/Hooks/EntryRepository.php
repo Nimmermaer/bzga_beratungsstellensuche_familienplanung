@@ -58,6 +58,10 @@ class EntryRepository
             $constraints[] = $query->equals('consultingAgreement', 1);
         }
 
+        if ($demand->isPndConsulting()) {
+            $constraints[] = $query->greaterThan('pndConsultings', 0);
+        }
+
         if ($religion = $demand->getReligion()) {
             $constraints[] = $query->equals('religiousDenomination', $religion);
         }
