@@ -15,8 +15,8 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\ViewHel
  * The TYPO3 project - inspiring people to share!
  */
 
-use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TYPO3\CMS\Extbase\Utility\LocalizationUtility;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 class TranslateViewHelperTest extends FunctionalTestCase
 {
@@ -34,7 +34,7 @@ class TranslateViewHelperTest extends FunctionalTestCase
     /**
      * @test
      */
-    public function translateFromDefaultExtension()
+    public function translateFromDefaultExtension(): void
     {
         $this->assertSame('Konfession', LocalizationUtility::translate('religions-form-label', 'bzga_beratungsstellensuche'));
     }

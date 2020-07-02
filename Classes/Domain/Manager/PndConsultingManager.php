@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types = 1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager;
 
 /**
@@ -15,6 +17,7 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager;
  * The TYPO3 project - inspiring people to share!
  */
 use Bzga\BzgaBeratungsstellensuche\Domain\Manager\AbstractManager;
+use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
 
 /**
@@ -28,18 +31,12 @@ class PndConsultingManager extends AbstractManager
      */
     protected $repository;
 
-    /**
-     * @param PndConsultingRepository $repository
-     */
-    public function injectRepository(PndConsultingRepository $repository)
+    public function injectRepository(PndConsultingRepository $repository): void
     {
         $this->repository = $repository;
     }
 
-    /**
-     * @return PndConsultingRepository
-     */
-    public function getRepository(): PndConsultingRepository
+    public function getRepository(): AbstractBaseRepository
     {
         return $this->repository;
     }

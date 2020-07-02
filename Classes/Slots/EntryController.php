@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
@@ -28,15 +30,11 @@ class EntryController
      */
     protected $religionRepository;
 
-    public function injectReligionRepository(ReligionRepository $religionRepository)
+    public function injectReligionRepository(ReligionRepository $religionRepository): void
     {
         $this->religionRepository = $religionRepository;
     }
 
-    /**
-     * @param array $variables
-     * @return array
-     */
     public function listAction(array $variables = []): array
     {
         $religions = $this->religionRepository->findAll();

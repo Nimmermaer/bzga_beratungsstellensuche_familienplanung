@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
@@ -38,23 +40,17 @@ class Importer
      */
     protected $pndConsultingManager;
 
-    public function injectReligionManager(ReligionManager $religionManager)
+    public function injectReligionManager(ReligionManager $religionManager): void
     {
         $this->religionManager = $religionManager;
     }
 
-    public function injectPndConsultingManager(PndConsultingManager $pndConsultingManager)
+    public function injectPndConsultingManager(PndConsultingManager $pndConsultingManager): void
     {
         $this->pndConsultingManager = $pndConsultingManager;
     }
 
-    /**
-     * @param XmlImporter $importer
-     * @param SimpleXMLIterator $sxe
-     * @param $pid
-     * @param BaseSerializer $serializer
-     */
-    public function preImport(XmlImporter $importer, SimpleXMLIterator $sxe, $pid, BaseSerializer $serializer)
+    public function preImport(XmlImporter $importer, SimpleXMLIterator $sxe, $pid, BaseSerializer $serializer): void
     {
         // Import religions
         $importer->convertRelations($sxe->konfessionen->konfession, $this->religionManager, Religion::class, $pid);

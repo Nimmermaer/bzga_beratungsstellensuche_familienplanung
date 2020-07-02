@@ -28,18 +28,12 @@ class Language extends AbstractEntity
      */
     protected $pndExternalId;
 
-    /**
-     * @return int
-     */
     public function getPndExternalId(): int
     {
         return (int)$this->pndExternalId;
     }
 
-    /**
-     * @param int $pndExternalId
-     */
-    public function setPndExternalId($pndExternalId)
+    public function setPndExternalId(int $pndExternalId): void
     {
         $this->pndExternalId = $pndExternalId;
     }

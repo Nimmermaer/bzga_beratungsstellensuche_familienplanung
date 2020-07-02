@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
 
 /**
@@ -25,10 +27,10 @@ class PndConsultingRepository extends AbstractBaseRepository
     /**
      * @var string
      */
-    const TABLE = 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting';
+    public const TABLE = 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting';
 
     /**
      * @var string
      */
-    const MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pndconsulting_mm';
+    public const MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pndconsulting_mm';
 }

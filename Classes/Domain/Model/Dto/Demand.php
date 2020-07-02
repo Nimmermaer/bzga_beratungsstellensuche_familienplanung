@@ -51,98 +51,62 @@ class Demand extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Dto\Demand
      */
     protected $useCoordinates = false;
 
-    /**
-     * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion|null
-     */
-    public function getReligion()
+    public function getReligion(): ?\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
     {
         return $this->religion;
     }
 
-    /**
-     * @param \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion|null $religion
-     */
-    public function setReligion($religion)
+    public function setReligion(?\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religion): void
     {
         $this->religion = $religion;
     }
 
-    /**
-     * @return bool
-     */
     public function isMotherAndChild(): bool
     {
         return $this->motherAndChild;
     }
 
-    /**
-     * @param bool $motherAndChild
-     */
-    public function setMotherAndChild(bool $motherAndChild)
+    public function setMotherAndChild(bool $motherAndChild): void
     {
         $this->motherAndChild = $motherAndChild;
     }
 
-    /**
-     * @return bool
-     */
     public function isContraceptiveCosts(): bool
     {
         return $this->contraceptiveCosts;
     }
 
-    /**
-     * @param bool $contraceptiveCosts
-     */
-    public function setContraceptiveCosts(bool $contraceptiveCosts)
+    public function setContraceptiveCosts(bool $contraceptiveCosts): void
     {
         $this->contraceptiveCosts = $contraceptiveCosts;
     }
 
-    /**
-     * @return bool
-     */
     public function isConsultingAgreement(): bool
     {
         return $this->consultingAgreement;
     }
 
-    /**
-     * @param bool $consultingAgreement
-     */
-    public function setConsultingAgreement(bool $consultingAgreement)
+    public function setConsultingAgreement(bool $consultingAgreement): void
     {
         $this->consultingAgreement = $consultingAgreement;
     }
 
-    /**
-     * @return bool
-     */
     public function isPndConsulting(): bool
     {
         return $this->pndConsulting;
     }
 
-    /**
-     * @param bool $pndConsulting
-     */
-    public function setPndConsulting($pndConsulting)
+    public function setPndConsulting($pndConsulting): void
     {
         $this->pndConsulting = $pndConsulting;
     }
 
-    /**
-     * @return bool
-     */
     public function isUseCoordinates(): bool
     {
         return $this->useCoordinates;
     }
 
-    /**
-     * @param bool $useCoordinates
-     */
-    public function setUseCoordinates(bool $useCoordinates)
+    public function setUseCoordinates(bool $useCoordinates): void
     {
         $this->useCoordinates = $useCoordinates;
     }

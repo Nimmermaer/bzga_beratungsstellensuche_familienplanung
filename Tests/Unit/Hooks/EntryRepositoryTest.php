@@ -17,8 +17,8 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Hooks;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Dto\Demand;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class EntryRepositoryTest extends UnitTestCase
 {
@@ -26,11 +26,9 @@ class EntryRepositoryTest extends UnitTestCase
     /**
      * @var EntryRepository
      */
-    private $subject;
+    protected $subject;
 
-    /**
-     */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->subject = new EntryRepository();
     }
@@ -38,25 +36,7 @@ class EntryRepositoryTest extends UnitTestCase
     /**
      * @test
      */
-    public function modifyReturnsNullNoDemandDefined()
-    {
-        $this->assertNull($this->subject->modify([]));
-    }
-
-    /**
-     * @test
-     */
-    public function modifyReturnNullNoQueryDefined()
-    {
-        $demand = $this->getMockBuilder(Demand::class)->getMock();
-        $params = ['demand' => $demand];
-        $this->assertNull($this->subject->modify($params));
-    }
-
-    /**
-     * @test
-     */
-    public function modifyAllConstraintsSet()
+    public function modifyAllConstraintsSet(): void
     {
         $religion = $this->getMockBuilder(Religion::class)->getMock();
         $demand = $this->getMockBuilder(Demand::class)->getMock();

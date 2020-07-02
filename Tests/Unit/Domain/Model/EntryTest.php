@@ -16,9 +16,9 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Entry;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
 use SJBR\StaticInfoTables\Domain\Model\Language;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 class EntryTest extends UnitTestCase
 {
@@ -26,11 +26,9 @@ class EntryTest extends UnitTestCase
     /**
      * @var Entry
      */
-    private $subject;
+    protected $subject;
 
-    /**
-     */
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->subject = new Entry();
     }
@@ -38,7 +36,7 @@ class EntryTest extends UnitTestCase
     /**
      * @test
      */
-    public function getAllPndLanguages()
+    public function getAllPndLanguages(): void
     {
         $french = 'Französisch';
         $english = 'Englisch';

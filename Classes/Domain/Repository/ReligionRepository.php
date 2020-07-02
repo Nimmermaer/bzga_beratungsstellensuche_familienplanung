@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
 
 /**
@@ -25,5 +27,5 @@ class ReligionRepository extends AbstractBaseRepository
     /**
      * @var string
      */
-    const TABLE = 'tx_bzgaberatungsstellensuche_domain_model_religion';
+    public const TABLE = 'tx_bzgaberatungsstellensuche_domain_model_religion';
 }

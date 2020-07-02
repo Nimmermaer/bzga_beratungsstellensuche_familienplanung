@@ -22,8 +22,6 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
 {
 
     /**
-     * Konfession.
-     *
      * @var \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion
      */
     protected $religiousDenomination;
@@ -56,7 +54,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @var string
      */
-    protected $pndOtherLanguage;
+    protected $pndOtherLanguage = '';
 
     /**
      * @var string
@@ -95,10 +93,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
         $this->pndLanguages->detach($language);
     }
 
-    /**
-     * @return string
-     */
-    public function getPndOtherLanguage()
+    public function getPndOtherLanguage(): string
     {
         return $this->pndOtherLanguage;
     }
@@ -106,14 +101,11 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param string $pndOtherLanguage
      */
-    public function setPndOtherLanguage($pndOtherLanguage)
+    public function setPndOtherLanguage($pndOtherLanguage): void
     {
         $this->pndOtherLanguage = $pndOtherLanguage;
     }
 
-    /**
-     * @return string
-     */
     public function getPndAllLanguages(): string
     {
         if (null === $this->pndAllLanguages) {
@@ -140,7 +132,6 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     }
 
     /**
-     * Returns the religiousDenomination.
      * @return \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
      */
     public function getReligiousDenomination()
@@ -149,8 +140,6 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     }
 
     /**
-     * Sets the religiousDenomination.
-     *
      * @param \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
      */
     public function setReligiousDenomination(
@@ -159,9 +148,6 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
         $this->religiousDenomination = $religiousDenomination;
     }
 
-    /**
-     * @return bool
-     */
     public function getMotherAndChild(): bool
     {
         return $this->motherAndChild;
@@ -170,14 +156,11 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param bool $motherAndChild
      */
-    public function setMotherAndChild(bool $motherAndChild)
+    public function setMotherAndChild($motherAndChild): void
     {
-        $this->motherAndChild = $motherAndChild;
+        $this->motherAndChild = (bool)$motherAndChild;
     }
 
-    /**
-     * @return bool
-     */
     public function getContraceptiveCosts(): bool
     {
         return $this->contraceptiveCosts;
@@ -186,15 +169,12 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param bool $contraceptiveCosts
      */
-    public function setContraceptiveCosts(bool $contraceptiveCosts)
+    public function setContraceptiveCosts($contraceptiveCosts): void
     {
-        $this->contraceptiveCosts = $contraceptiveCosts;
+        $this->contraceptiveCosts = (bool)$contraceptiveCosts;
     }
 
-    /**
-     * @return bool
-     */
-    public function getConsultingAgreement()
+    public function getConsultingAgreement(): bool
     {
         return (boolean)$this->consultingAgreement;
     }
@@ -202,15 +182,12 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param bool $consultingAgreement
      */
-    public function setConsultingAgreement($consultingAgreement)
+    public function setConsultingAgreement($consultingAgreement): void
     {
-        $this->consultingAgreement = (boolean)$consultingAgreement;
+        $this->consultingAgreement = (bool)$consultingAgreement;
     }
 
-    /**
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage
-     */
-    public function getPndConsultings()
+    public function getPndConsultings(): ?\TYPO3\CMS\Extbase\Persistence\ObjectStorage
     {
         return $this->pndConsultings;
     }
@@ -218,7 +195,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $pndConsultings
      */
-    public function setPndConsultings($pndConsultings)
+    public function setPndConsultings($pndConsultings): void
     {
         $this->pndConsultings = $pndConsultings;
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
@@ -40,25 +42,21 @@ class EntryNormalizer
      */
     protected $pndConsultingRepository;
 
-    public function injectReligionRepository(ReligionRepository $religionRepository)
+    public function injectReligionRepository(ReligionRepository $religionRepository): void
     {
         $this->religionRepository = $religionRepository;
     }
 
-    public function injectLanguageRepository(LanguageRepository $languageRepository)
+    public function injectLanguageRepository(LanguageRepository $languageRepository): void
     {
         $this->languageRepository = $languageRepository;
     }
 
-    public function injectPndConsultingRepository(PndConsultingRepository $pndConsultingRepository)
+    public function injectPndConsultingRepository(PndConsultingRepository $pndConsultingRepository): void
     {
         $this->pndConsultingRepository = $pndConsultingRepository;
     }
 
-    /**
-     * @param array $callbacks
-     * @return array
-     */
     public function additionalCallbacks(array $callbacks = []): array
     {
         $callbacks = array_merge($callbacks, [

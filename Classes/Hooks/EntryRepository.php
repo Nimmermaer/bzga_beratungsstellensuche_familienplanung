@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks;
 
 /**
@@ -23,13 +25,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
  */
 class EntryRepository
 {
-
-    /**
-     * Modify the constraints used in the query
-     *
-     * @param array $params
-     */
-    public function modify(array $params)
+    public function modify(array $params): void
     {
         $demand = $params['demand'] ?? null;
         /** @var $demand Demand|BaseDemand */
