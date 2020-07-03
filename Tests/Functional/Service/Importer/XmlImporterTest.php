@@ -17,7 +17,7 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\Service
 
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\Exception\ContentCouldNotBeFetchedException;
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
-use Bzga\BzgaBeratungsstellensuche\Tests\Functional\DatabaseTrait;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\DatabaseTrait;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -87,8 +87,8 @@ class XmlImporterTest extends FunctionalTestCase
         $this->objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
         $this->xmlImporter = $this->objectManager->get(XmlImporter::class);
 
-        $this->importDataSet(__DIR__.'/../../Fixtures/pages.xml');
-        $this->importDataSet(__DIR__.'/../../Fixtures/sys_file_storage.xml');
+        $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
+        $this->importDataSet(__DIR__ . '/../../Fixtures/sys_file_storage.xml');
     }
 
     /**
