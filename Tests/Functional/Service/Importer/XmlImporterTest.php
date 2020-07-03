@@ -30,7 +30,7 @@ class XmlImporterTest extends FunctionalTestCase
     use DatabaseTrait;
 
     /**
-     * @var string
+     * @var int
      */
     private const SYS_FOLDER_FOR_ENTRIES = 10001;
 
@@ -53,7 +53,7 @@ class XmlImporterTest extends FunctionalTestCase
      * @var array
      */
     protected $pathsToLinkInTestInstance = [
-        'typo3conf/ext/bzga_beratungsstellensuche_familienplanung/Tests/Functional/Fixtures/Import/fileadmin/import' => 'fileadmin/import'
+        'typo3conf/ext/bzga_beratungsstellensuche_familienplanung/Tests/Functional/Fixtures/Import/fileadmin/import' => 'fileadmin/import',
     ];
 
     /**
@@ -65,17 +65,7 @@ class XmlImporterTest extends FunctionalTestCase
      * @var array
      */
     protected $additionalFoldersToCreate = [
-        'fileadmin/user_upload/tx_bzgaberatungsstellensuche'
-    ];
-
-    /**
-     * To prevent some false/positive sql failures
-     * @var array
-     */
-    protected $configurationToUseInTestInstance = [
-        'SYS' => [
-            'setDBinit' => 'SET SESSION sql_mode = \'\';',
-        ]
+        'fileadmin/user_upload/tx_bzgaberatungsstellensuche',
     ];
 
     public function setUp(): void
@@ -84,11 +74,11 @@ class XmlImporterTest extends FunctionalTestCase
         $backendUser = $this->setUpBackendUserFromFixture(1);
         $backendUser->workspace = 0;
         Bootstrap::initializeLanguageObject();
-        $this->objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
+        $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $this->xmlImporter = $this->objectManager->get(XmlImporter::class);
 
-        $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
-        $this->importDataSet(__DIR__ . '/../../Fixtures/sys_file_storage.xml');
+        $this->importDataSet(__DIR__.'/../../Fixtures/pages.xml');
+        $this->importDataSet(__DIR__.'/../../Fixtures/sys_file_storage.xml');
     }
 
     /**
@@ -96,11 +86,8 @@ class XmlImporterTest extends FunctionalTestCase
      */
     public function importFromFile(): void
     {
-        try {
-            $this->xmlImporter->importFromFile('fileadmin/import/beratungsstellen.xml', self::SYS_FOLDER_FOR_ENTRIES);
-        } catch (ContentCouldNotBeFetchedException $e) {
-        } catch (FileDoesNotExistException $e) {
-        }
+        $this->xmlImporter->importFromFile('fileadmin/import/beratungsstellen.xml', self::SYS_FOLDER_FOR_ENTRIES);
+
         foreach ($this->xmlImporter as $value) {
             $this->xmlImporter->importEntry($value);
         }
