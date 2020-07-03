@@ -1,8 +1,9 @@
-{namespace bzga=Bzga\BzgaBeratungsstellensuche\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="checkbox">
-    <label>
-        <f:form.checkbox id="bsd-mother-and-child" property="motherAndChild" value="1"/>
-        <bzga:translate key="mother-and-child-form-label"/>
-        <span aria-hidden="true" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="{bzga:translate(key: 'mother-and-child-notice-body')}"></span>
-    </label>
+  <label>
+    <f:form.checkbox id="bsd-mother-and-child" property="motherAndChild" value="1"/>
+    <f:translate key="mother-and-child-form-label"/>
+    <span aria-hidden="true" class="glyphicon glyphicon-question-sign" data-toggle="tooltip" data-placement="right" title="{f:translate(key: 'mother-and-child-notice-body')}"></span>
+  </label>
 </div>
+</html>

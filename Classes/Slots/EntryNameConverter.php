@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
 /**
@@ -20,11 +22,6 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
  */
 class EntryNameConverter
 {
-
-    /**
-     * @param array $mapNames
-     * @return array
-     */
     public function mapNames(array $mapNames = []): array
     {
         $mapNames = array_merge($mapNames, [

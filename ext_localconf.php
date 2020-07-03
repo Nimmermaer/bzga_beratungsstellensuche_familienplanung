@@ -1,9 +1,6 @@
 <?php
 
-
-if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
-}
+defined('TYPO3_MODE') || die('Access denied.');
 
 call_user_func(function ($packageKey) {
     $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:bzga_beratungsstellensuche/Resources/Private/Language/locallang.xlf'][] = 'EXT:bzga_beratungsstellensuche_familienplanung/Resources/Private/Language/locallang.xlf';
@@ -63,8 +60,7 @@ call_user_func(function ($packageKey) {
     );
 
     // Extend the demand query
-    $GLOBALS['TYPO3_CONF_VARS']['EXT']['bzga_beratungsstellensuche']['Domain/Repository/EntryRepository.php']['findDemanded'][]
-        = 'EXT:bzga_beratungsstellensuche_familienplanung/Classes/Hooks/EntryRepository.php:Bzga\\BzgaBeratungsstellensucheFamilienplanung\\Hooks\\EntryRepository->modify';
+    $GLOBALS['TYPO3_CONF_VARS']['EXT']['bzga_beratungsstellensuche']['Domain/Repository/EntryRepository.php']['findDemanded'][] = \Bzga\BzgaBeratungsstellensucheFamilienplanung\Hooks\EntryRepository::class . '->modify';
 
     // Extend the form fields in flexforms
     $fields = [

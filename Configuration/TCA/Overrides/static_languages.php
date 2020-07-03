@@ -1,5 +1,6 @@
 <?php
-defined('TYPO3_MODE') or die();
+
+defined('TYPO3_MODE') || die('Access denied.');
 
 $additionalFields = [
     'lg_name_en' => 'pnd_external_id',

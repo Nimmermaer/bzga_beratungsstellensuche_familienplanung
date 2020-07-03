@@ -17,22 +17,22 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\Service
 
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\Exception\ContentCouldNotBeFetchedException;
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
-use Nimut\TestingFramework\Exception\Exception;
-use Nimut\TestingFramework\TestCase\FunctionalTestCase;
+use Bzga\BzgaBeratungsstellensuche\Tests\Functional\DatabaseTrait;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
-use TYPO3\CMS\Extensionmanager\Utility\UpdateScriptUtility;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 class XmlImporterTest extends FunctionalTestCase
 {
+    use DatabaseTrait;
 
     /**
      * @var string
      */
-    const SYS_FOLDER_FOR_ENTRIES = 10001;
+    private const SYS_FOLDER_FOR_ENTRIES = 10001;
 
     /**
      * @var ObjectManagerInterface
@@ -78,27 +78,23 @@ class XmlImporterTest extends FunctionalTestCase
         ]
     ];
 
-    /**
-     * @throws Exception
-     */
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $backendUser = $this->setUpBackendUserFromFixture(1);
         $backendUser->workspace = 0;
-        Bootstrap::getInstance()->initializeLanguageObject();
+        Bootstrap::initializeLanguageObject();
         $this->objectManager   = GeneralUtility::makeInstance(ObjectManager::class);
         $this->xmlImporter = $this->objectManager->get(XmlImporter::class);
 
-        $this->importDataSet('ntf://Database/pages.xml');
-        $this->importDataSet('ntf://Database/sys_file_storage.xml');
-        $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
+        $this->importDataSet(__DIR__.'/../../Fixtures/pages.xml');
+        $this->importDataSet(__DIR__.'/../../Fixtures/sys_file_storage.xml');
     }
 
     /**
      * @test
      */
-    public function importFromFile()
+    public function importFromFile(): void
     {
         try {
             $this->xmlImporter->importFromFile('fileadmin/import/beratungsstellen.xml', self::SYS_FOLDER_FOR_ENTRIES);
@@ -110,25 +106,23 @@ class XmlImporterTest extends FunctionalTestCase
         }
         $this->xmlImporter->persist();
 
-        $this->assertEquals(3, $this->getDatabaseConnection()->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_category'));
-        $this->assertEquals(3, $this->getDatabaseConnection()->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting'));
-        $this->assertEquals(3, $this->getDatabaseConnection()->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_religion'));
-        $this->assertEquals(1, $this->getDatabaseConnection()->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_entry'));
-        $this->assertEquals(2, $this->getDatabaseConnection()->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm'));
-        $this->assertEquals(2, $this->getDatabaseConnection()->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_category_mm'));
+        $this->assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_category'));
+        $this->assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting'));
+        $this->assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_religion'));
+        $this->assertEquals(1, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_entry'));
+        $this->assertEquals(2, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm'));
+        $this->assertEquals(2, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_category_mm'));
     }
 
     /**
      * @test
      */
-    public function externalIdForStaticLanguagesCorrectlySet()
+    public function externalIdForStaticLanguagesCorrectlySet(): void
     {
-        $this->assertEquals(8, $this->getDatabaseConnection()->selectCount('*', 'static_languages', 'pnd_external_id > 0'));
+        $this->assertEquals(8, $this->selectCount('*', 'static_languages', 'pnd_external_id > 0'));
     }
 
-    /**
-     */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->xmlImporter, $this->objectManager);
     }

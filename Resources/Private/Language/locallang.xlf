@@ -5,62 +5,62 @@
         <header/>
         <body>
             <trans-unit id="consulting-agreement-form-label" xml:space="preserve">
-				<source>Beratungsschein</source>
-			</trans-unit>
-			<trans-unit id="consulting-agreement-notice-headline" xml:space="preserve">
-				<source>Hinweis</source>
-			</trans-unit>
-			<trans-unit id="consulting-agreement-notice-body" xml:space="preserve">
-				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die einen Beratungsschein ausstellen. Der Beratungsschein ist Voraussetzung für einen straffreien Schwangerschaftsabbruch nach der Beratungsregelung.</source>
-			</trans-unit>
-			<trans-unit id="consulting-agreement-pnd-form-label" xml:space="preserve">
-				<source>Beratung zu Pränataldiagnostik</source>
-			</trans-unit>
-			<trans-unit id="cosulting-agreement-pnd-notice-headline" xml:space="preserve">
-				<source>Hinweis</source>
-			</trans-unit>
-			<trans-unit id="consulting-agreement-pnd-notice-body" xml:space="preserve">
-				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die über Beraterinnen und Berater mit spezieller Zusatzqualifikation im Bereich Pränataldiagnostik verfügen und sich als Schwerpunktberatungsstellen für Pränataldiagnostik verstehen.</source>
-			</trans-unit>
-			<trans-unit id="mother-and-child-form-label" xml:space="preserve">
-				<source>Beantragung von Mitteln der Bundesstiftung Mutter und Kind</source>
-			</trans-unit>
-			<trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
-				<source>Warum ist die Angabe des Bundeslandes wichtig?</source>
-			</trans-unit>
-			<trans-unit id="mother-and-child-notice-body" xml:space="preserve">
-				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die Mittel der „Bundesstiftung Mutter und Kind“ vergeben. Beachten Sie: Finanzielle Unterstützung kann nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem Sie Ihren Wohnsitz haben.</source>
-			</trans-unit>
-			<trans-unit id="contraceptive-costs-form-label" xml:space="preserve">
-				<source>Kostenübernahme von Verhütungsmitteln</source>
-			</trans-unit>
-			<trans-unit id="contraceptive-costs-notice-headline" xml:space="preserve">
-				<source>Kostenübernahme Verhütungsmittel</source>
-			</trans-unit>
-			<trans-unit id="contraceptive-costs-notice-body" xml:space="preserve">
-				<source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, bei denen Frauen mit geringem Einkommen eine Kostenübernahme für Verhütungsmittel beantragen können (z.B. aus einem Sonderfonds der Kommune oder aus Modellprojekten). Über die genauen Regelungen und Möglichkeiten informieren die Beratungsstellen.</source>
-			</trans-unit>
-			<trans-unit id="religions-form-label" xml:space="preserve">
-				<source>Konfession</source>
-			</trans-unit>
-			<trans-unit id="pnd-consulting" xml:space="preserve">
-				<source>Unsere Beratungsstelle versteht sich als Schwerpunktberatungsstelle im Bereich Pränataldiagnostik.</source>
-			</trans-unit>
-			<trans-unit id="pnd-consulting-languages" xml:space="preserve">
-				<source>Wir bieten PND-Beratung in folgenden Sprachen an: %s</source>
-			</trans-unit>
-			<trans-unit id="mother-and-child" xml:space="preserve">
-				<source>Über diese Beratungsstelle können Mittel der "Bundesstiftung Mutter und Kind" vergeben werden.</source>
-			</trans-unit>
-			<trans-unit id="consulting-agreement" xml:space="preserve">
-				<source>Beratungsschein</source>
-			</trans-unit>
-			<trans-unit id="yes" xml:space="preserve">
-				<source>ja</source>
-			</trans-unit>
-			<trans-unit id="no" xml:space="preserve">
-				<source>nein</source>
-			</trans-unit>
+                <source>Beratungsschein</source>
+            </trans-unit>
+            <trans-unit id="consulting-agreement-notice-headline" xml:space="preserve">
+                <source>Hinweis</source>
+            </trans-unit>
+            <trans-unit id="consulting-agreement-notice-body" xml:space="preserve">
+                <source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die einen Beratungsschein ausstellen. Der Beratungsschein ist Voraussetzung für einen straffreien Schwangerschaftsabbruch nach der Beratungsregelung.</source>
+            </trans-unit>
+            <trans-unit id="consulting-agreement-pnd-form-label" xml:space="preserve">
+                <source>Beratung zu Pränataldiagnostik</source>
+            </trans-unit>
+            <trans-unit id="cosulting-agreement-pnd-notice-headline" xml:space="preserve">
+                <source>Hinweis</source>
+            </trans-unit>
+            <trans-unit id="consulting-agreement-pnd-notice-body" xml:space="preserve">
+                <source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die über Beraterinnen und Berater mit spezieller Zusatzqualifikation im Bereich Pränataldiagnostik verfügen und sich als Schwerpunktberatungsstellen für Pränataldiagnostik verstehen.</source>
+            </trans-unit>
+            <trans-unit id="mother-and-child-form-label" xml:space="preserve">
+                <source>Beantragung von Mitteln der Bundesstiftung Mutter und Kind</source>
+            </trans-unit>
+            <trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
+                <source>Warum ist die Angabe des Bundeslandes wichtig?</source>
+            </trans-unit>
+            <trans-unit id="mother-and-child-notice-body" xml:space="preserve">
+                <source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die Mittel der „Bundesstiftung Mutter und Kind“ vergeben. Beachten Sie: Finanzielle Unterstützung kann nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem Sie Ihren Wohnsitz haben.</source>
+            </trans-unit>
+            <trans-unit id="contraceptive-costs-form-label" xml:space="preserve">
+                <source>Kostenübernahme von Verhütungsmitteln</source>
+            </trans-unit>
+            <trans-unit id="contraceptive-costs-notice-headline" xml:space="preserve">
+                <source>Kostenübernahme Verhütungsmittel</source>
+            </trans-unit>
+            <trans-unit id="contraceptive-costs-notice-body" xml:space="preserve">
+                <source>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, bei denen Frauen mit geringem Einkommen eine Kostenübernahme für Verhütungsmittel beantragen können (z.B. aus einem Sonderfonds der Kommune oder aus Modellprojekten). Über die genauen Regelungen und Möglichkeiten informieren die Beratungsstellen.</source>
+            </trans-unit>
+            <trans-unit id="religions-form-label" xml:space="preserve">
+                <source>Konfession</source>
+            </trans-unit>
+            <trans-unit id="pnd-consulting" xml:space="preserve">
+                <source>Unsere Beratungsstelle versteht sich als Schwerpunktberatungsstelle im Bereich Pränataldiagnostik.</source>
+            </trans-unit>
+            <trans-unit id="pnd-consulting-languages" xml:space="preserve">
+                <source>Wir bieten PND-Beratung in folgenden Sprachen an: %s</source>
+            </trans-unit>
+            <trans-unit id="mother-and-child" xml:space="preserve">
+                <source>Über diese Beratungsstelle können Mittel der "Bundesstiftung Mutter und Kind" vergeben werden.</source>
+            </trans-unit>
+            <trans-unit id="consulting-agreement" xml:space="preserve">
+                <source>Beratungsschein</source>
+            </trans-unit>
+            <trans-unit id="yes" xml:space="preserve">
+                <source>ja</source>
+            </trans-unit>
+            <trans-unit id="no" xml:space="preserve">
+                <source>nein</source>
+            </trans-unit>
         </body>
     </file>
 </xliff>

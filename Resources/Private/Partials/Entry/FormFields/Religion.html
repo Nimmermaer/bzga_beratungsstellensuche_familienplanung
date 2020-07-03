@@ -1,8 +1,9 @@
-{namespace bzga=Bzga\BzgaBeratungsstellensuche\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <div class="form-group">
-    <label for="religion">
-        <bzga:translate key="religions-form-label"/>
-    </label>
-    <f:form.select class="form-control" property="religion" id="religion" prependOptionLabel="{bzga:translate(key: 'please-choose')}"
-                   prependOptionValue="" options="{religions}"/>
+  <label for="religion">
+    <f:translate key="religions-form-label"/>
+  </label>
+  <f:form.select class="form-control" property="religion" id="religion" prependOptionLabel="{f:translate(key: 'please-choose')}"
+                 prependOptionValue="" options="{religions}"/>
 </div>
+</html>

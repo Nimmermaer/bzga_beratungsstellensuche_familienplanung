@@ -1,7 +1,6 @@
 <?php
-if (!defined('TYPO3_MODE')) {
-    die('Access denied.');
-}
+
+defined('TYPO3_MODE') || die('Access denied.');
 
 return [
     'ctrl' => [
@@ -10,9 +9,7 @@ return [
         'tstamp' => 'tstamp',
         'crdate' => 'crdate',
         'cruser_id' => 'cruser_id',
-        'dividers2tabs' => true,
-        'versioningWS' => 2,
-        'versioning_followPages' => true,
+        'versioningWS' => true,
         'origUid' => 't3_origuid',
         'languageField' => 'sys_language_uid',
         'transOrigPointerField' => 'l10n_parent',
@@ -30,7 +27,7 @@ return [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, entries, external_id',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, title, entries, external_id,--div--;LLL:EXT:bzga_beratungsstellensuche/Resources/Private/Language/locallang_be.xlf:tabs.access,starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, entries, external_id,--div--;LLL:EXT:bzga_beratungsstellensuche/Resources/Private/Language/locallang_be.xlf:tabs.access,starttime, endtime'],
     ],
     'palettes' => [
         '1' => ['showitem' => ''],
@@ -38,39 +35,44 @@ return [
     'columns' => [
         'sys_language_uid' => [
             'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.language',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'sys_language',
                 'foreign_table_where' => 'ORDER BY sys_language.title',
                 'items' => [
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.allLanguages', -1],
-                    ['LLL:EXT:lang/locallang_general.xlf:LGL.default_value', 0],
+                    ['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages', -1],
+                    ['LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.default_value', 0],
                 ],
             ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    ['', 0],
-                ],
-                'foreign_table' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
-                'foreign_table_where' => 'AND tx_bzgaberatungsstellensuche_domain_model_pndconsulting.pid=###CURRENT_PID### AND tx_bzgaberatungsstellensuche_domain_model_pndconsulting.sys_language_uid IN (-1,0)',
+                'type' => 'group',
+                'internal_type' => 'db',
+                'allowed' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
+                'size' => 1,
+                'maxitems' => 1,
+                'minitems' => 0,
+                'default' => 0,
             ],
+        ],
+        'l10n_source' => [
+            'config' => [
+                'type' => 'passthrough'
+            ]
         ],
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
-            ],
+                'default' => ''
+            ]
         ],
         't3ver_label' => [
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.versionLabel',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.versionLabel',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -78,43 +80,47 @@ return [
             ],
         ],
         'hidden' => [
-            'exclude' => 1,
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.hidden',
+            'exclude' => true,
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-            ],
+                'renderType' => 'checkboxToggle',
+                'default' => 0,
+                'items' => [
+                    [
+                        0 => '',
+                        1 => '',
+                    ]
+                ],
+            ]
         ],
         'starttime' => [
-            'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.starttime',
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel',
             'config' => [
                 'type' => 'input',
-                'size' => 13,
-                'max' => 20,
-                'eval' => 'datetime',
-                'checkbox' => 0,
+                'renderType' => 'inputDateTime',
+                'size' => 16,
+                'eval' => 'datetime,int',
                 'default' => 0,
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y')),
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
                 ],
-            ],
+            ]
         ],
         'endtime' => [
-            'exclude' => 1,
-            'l10n_mode' => 'mergeIfNotBlank',
-            'label' => 'LLL:EXT:lang/locallang_general.xlf:LGL.endtime',
+            'exclude' => true,
+            'label' => 'LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
             'config' => [
                 'type' => 'input',
-                'size' => 13,
-                'max' => 20,
-                'eval' => 'datetime',
-                'checkbox' => 0,
+                'renderType' => 'inputDateTime',
+                'size' => 16,
+                'eval' => 'datetime,int',
                 'default' => 0,
-                'range' => [
-                    'lower' => mktime(0, 0, 0, date('m'), date('d'), date('Y')),
+                'behaviour' => [
+                    'allowLanguageSynchronization' => true,
                 ],
-            ],
+            ]
         ],
         'title' => [
             'exclude' => 0,

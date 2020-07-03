@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
 
@@ -15,9 +16,9 @@ class EntryRepository
     /**
      * @var string
      */
-    const LANGUAGE_MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm';
+    public const LANGUAGE_MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm';
 
-    public function truncate()
+    public function truncate(): void
     {
         $this->getDatabaseConnectionForTable(ReligionRepository::TABLE)->truncate(ReligionRepository::TABLE);
         $this->getDatabaseConnectionForTable(PndConsultingRepository::TABLE)->truncate(PndConsultingRepository::TABLE);
@@ -26,11 +27,6 @@ class EntryRepository
         $this->getDatabaseConnectionForTable(self::LANGUAGE_MM_TABLE)->truncate(self::LANGUAGE_MM_TABLE);
     }
 
-    /**
-     * @param string $table
-     *
-     * @return Connection
-     */
     protected function getDatabaseConnectionForTable(string $table): Connection
     {
         return GeneralUtility::makeInstance(ConnectionPool::class)
