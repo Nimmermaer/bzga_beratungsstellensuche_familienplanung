@@ -15,11 +15,10 @@ namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\Service
  * The TYPO3 project - inspiring people to share!
  */
 
-use Bzga\BzgaBeratungsstellensuche\Service\Importer\Exception\ContentCouldNotBeFetchedException;
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\DatabaseTrait;
+use SJBR\StaticInfoTables\Utility\DatabaseUpdateUtility;
 use TYPO3\CMS\Core\Core\Bootstrap;
-use TYPO3\CMS\Core\Resource\Exception\FileDoesNotExistException;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
@@ -59,7 +58,7 @@ class XmlImporterTest extends FunctionalTestCase
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = ['typo3conf/ext/bzga_beratungsstellensuche_familienplanung', 'typo3conf/ext/bzga_beratungsstellensuche', 'typo3conf/ext/static_info_tables', 'typo3conf/ext/static_info_tables_de'];
+    protected $testExtensionsToLoad = ['typo3conf/ext/static_info_tables', 'typo3conf/ext/static_info_tables_de', 'typo3conf/ext/bzga_beratungsstellensuche', 'typo3conf/ext/bzga_beratungsstellensuche_familienplanung'];
 
     /**
      * @var array
@@ -77,8 +76,14 @@ class XmlImporterTest extends FunctionalTestCase
         $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $this->xmlImporter = $this->objectManager->get(XmlImporter::class);
 
-        $this->importDataSet(__DIR__.'/../../Fixtures/pages.xml');
-        $this->importDataSet(__DIR__.'/../../Fixtures/sys_file_storage.xml');
+        $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
+        $this->importDataSet(__DIR__ . '/../../Fixtures/sys_file_storage.xml');
+
+        /** @var ObjectManager $objectManager */
+        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+        /** @var DatabaseUpdateUtility $databaseUpdateUtility */
+        $databaseUpdateUtility = $objectManager->get(DatabaseUpdateUtility::class);
+        $databaseUpdateUtility->doUpdate('bzga_beratungsstellensuche_familienplanung');
     }
 
     /**
