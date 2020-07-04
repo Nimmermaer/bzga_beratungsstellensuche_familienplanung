@@ -43,8 +43,9 @@ CREATE TABLE tx_bzgaberatungsstellensuche_domain_model_religion (
   sys_language_uid int(11) DEFAULT '0' NOT NULL,
   l10n_parent int(11) DEFAULT '0' NOT NULL,
   l10n_diffsource mediumblob,
+  l10n_state TEXT DEFAULT NULL,
 
-  is_dummy_record tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  is_dummy_record tinyint(4) DEFAULT '0' NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid),
@@ -100,8 +101,9 @@ CREATE TABLE tx_bzgaberatungsstellensuche_domain_model_pndconsulting (
   sys_language_uid int(11) DEFAULT '0' NOT NULL,
   l10n_parent int(11) DEFAULT '0' NOT NULL,
   l10n_diffsource mediumblob,
+  l10n_state TEXT DEFAULT NULL,
 
-  is_dummy_record tinyint(4) unsigned DEFAULT '0' NOT NULL,
+  is_dummy_record tinyint(4) DEFAULT '0' NOT NULL,
 
   PRIMARY KEY (uid),
   KEY parent (pid),
