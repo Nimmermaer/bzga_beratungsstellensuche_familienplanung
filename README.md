@@ -1,5 +1,4 @@
 Beratungsstellensuche - Schwangerschaft
 =======================================
-[![Build Status](https://img.shields.io/travis/sabbelasichon/bzga_beratungsstellensuche_familienplanung/master.svg?style=flat-square)](https://travis-ci.org/sabbelasichon/bzga_beratungsstellensuche_familienplanung)
-
+[![CI Status](https://github.com/sabbelasichon/bzga_beratungsstellensuche_familienplanung/workflows/CI/badge.svg)](https://github.com/sabbelasichon/bzga_beratungsstellensuche_familienplanung/actions)
 Erweitert die Extension bzga_beratungsstellensuche um einige neue Datenbankrelationen und Felder.

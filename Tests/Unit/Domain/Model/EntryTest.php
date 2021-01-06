@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Domain\Model;
 
 /**
