@@ -35,22 +35,22 @@
         }
     },
     "require": {
-        "typo3/cms-core": "^9.5",
+        "typo3/cms-core": "^9.5 || ^10.4",
         "php": ">=7.3",
         "bzga/bzga-beratungsstellensuche": "^9.5",
         "ext-simplexml": "*"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.0",
-        "typo3/testing-framework": "^4.0",
-        "typo3/cms-tstemplate": "^9.0",
-        "typo3/cms-seo": "^9.0",
-        "typo3/cms-fluid-styled-content": "^9.0",
-        "typo3/cms-extensionmanager": "^9.0",
-        "typo3/cms-belog": "^9.0",
-        "typo3/cms-rte-ckeditor": "^9.0",
-        "helhum/typo3-console": "5.*",
-        "php-parallel-lint/php-parallel-lint": "^1.2"
+        "typo3/testing-framework": "^5.0",
+        "typo3/cms-tstemplate": "^9.0 || ^10.4",
+        "typo3/cms-seo": "^9.0 || ^10.4",
+        "typo3/cms-fluid-styled-content": "^9.0 || ^10.4",
+        "typo3/cms-extensionmanager": "^9.0 || ^10.4",
+        "typo3/cms-belog": "^9.0 || ^10.4",
+        "typo3/cms-rte-ckeditor": "^9.0 || ^10.4",
+        "helhum/typo3-console": "^5.0 || ^6.0",
+        "php-parallel-lint/php-parallel-lint": "^1.2",
+        "typo3/coding-standards": "^0.2.0"
     },
     "replace": {
         "typo3-ter/bzga-beratungsstellensuche-familienplanung": "self.version"
