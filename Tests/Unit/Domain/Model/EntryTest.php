@@ -1,19 +1,14 @@
 <?php
 
-namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Domain\Model;
-
-/**
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+/*
+ * This file is part of the "bzga_beratungsstellensuche_familienplanung" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
  */
+
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Unit\Domain\Model;
+
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Entry;
 use SJBR\StaticInfoTables\Domain\Model\Language;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -42,9 +37,9 @@ class EntryTest extends UnitTestCase
         $whatever = 'Whatever';
 
         $frenchLanguage = $this->getMockBuilder(Language::class)->getMock();
-        $frenchLanguage->expects($this->once())->method('getNameLocalized')->willReturn($french);
+        $frenchLanguage->expects(self::once())->method('getNameLocalized')->willReturn($french);
         $englishLanguage = $this->getMockBuilder(Language::class)->getMock();
-        $englishLanguage->expects($this->once())->method('getNameLocalized')->willReturn($english);
+        $englishLanguage->expects(self::once())->method('getNameLocalized')->willReturn($english);
 
         $languages = new ObjectStorage();
         $languages->attach($frenchLanguage);
@@ -52,6 +47,6 @@ class EntryTest extends UnitTestCase
         $this->subject->setPndLanguages($languages);
         $this->subject->setPndOtherLanguage($whatever);
 
-        $this->assertSame(implode(', ', [$english, $french, $whatever]), $this->subject->getPndAllLanguages());
+        self::assertSame(implode(', ', [$english, $french, $whatever]), $this->subject->getPndAllLanguages());
     }
 }

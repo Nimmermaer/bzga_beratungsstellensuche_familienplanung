@@ -1,19 +1,13 @@
 <?php
 
-namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\Service\Importer;
-
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the "bzga_beratungsstellensuche_familienplanung" Extension for TYPO3 CMS.
  *
  * For the full copyright and license information, please read the
  * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
  */
+
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\Service\Importer;
 
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\DatabaseTrait;
@@ -98,12 +92,12 @@ class XmlImporterTest extends FunctionalTestCase
         }
         $this->xmlImporter->persist();
 
-        $this->assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_category'));
-        $this->assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting'));
-        $this->assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_religion'));
-        $this->assertEquals(1, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_entry'));
-        $this->assertEquals(2, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm'));
-        $this->assertEquals(2, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_category_mm'));
+        self::assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_category'));
+        self::assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting'));
+        self::assertEquals(3, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_religion'));
+        self::assertEquals(1, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_domain_model_entry'));
+        self::assertEquals(2, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm'));
+        self::assertEquals(2, $this->selectCount('*', 'tx_bzgaberatungsstellensuche_entry_category_mm'));
     }
 
     /**
@@ -111,7 +105,7 @@ class XmlImporterTest extends FunctionalTestCase
      */
     public function externalIdForStaticLanguagesCorrectlySet(): void
     {
-        $this->assertEquals(8, $this->selectCount('*', 'static_languages', 'pnd_external_id > 0'));
+        self::assertEquals(8, $this->selectCount('*', 'static_languages', 'pnd_external_id > 0'));
     }
 
     public function tearDown(): void
