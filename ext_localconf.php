@@ -86,4 +86,8 @@ call_user_func(function ($packageKey) {
         ],
     ];
     \Bzga\BzgaBeratungsstellensuche\Utility\ExtensionManagementUtility::addAdditionalFormFields($fields);
+
+    // Upgrade wizards
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update'][\Bzga\BzgaBeratungsstellensucheFamilienplanung\Updates\ImportLanguagesUpdate::class] = \Bzga\BzgaBeratungsstellensucheFamilienplanung\Updates\ImportLanguagesUpdate::class;
+
 }, 'bzga_beratungsstellensuche_familienplanung');

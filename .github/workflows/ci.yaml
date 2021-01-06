@@ -62,6 +62,7 @@ jobs:
         php-versions: [ 7.3, 7.4 ]
         typo3-versions:
           - { typo3: 9 }
+          - { typo3: 10 }
     name: "Run tests with PHP ${{ matrix.php-versions }}"
     steps:
       - uses: actions/checkout@v2
