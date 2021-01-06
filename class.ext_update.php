@@ -30,7 +30,7 @@ class ext_update
         $databaseUpdateUtility->doUpdate('bzga_beratungsstellensuche_familienplanung');
         $content .= '<p>' . LocalizationUtility::translate(
             'updateLanguageLabels',
-                'StaticInfoTables'
+            'StaticInfoTables'
         ) . ' bzga_beratungsstellensuche_familienplanung.</p>';
 
         return $content;
