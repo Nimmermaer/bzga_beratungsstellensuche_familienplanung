@@ -1,68 +1,88 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2016-08-14T12:41:03Z"
+    <file target-language="de" datatype="plaintext" original="messages" date="2016-08-14T12:41:03Z"
           product-name="bzga_beratungsstellensuche_familienplanung">
         <header/>
         <body>
             <trans-unit id="consulting-agreement-form-label" xml:space="preserve">
                 <source>Counseling certificate</source>
+                <target>Beratungsschein</target>
             </trans-unit>
             <trans-unit id="consulting-agreement-notice-headline" xml:space="preserve">
                 <source>Hint</source>
+                <target>Hinweis</target>
             </trans-unit>
             <trans-unit id="consulting-agreement-notice-body" xml:space="preserve">
                 <source>If you tick this box, only counseling centers that issue a counseling certificate will be displayed. The counseling certificate is a prerequisite for an unpunished termination of pregnancy according to the counseling regulation.</source>
+                <target>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die einen Beratungsschein ausstellen. Der Beratungsschein ist Voraussetzung für einen straffreien Schwangerschaftsabbruch nach der Beratungsregelung.</target>
             </trans-unit>
             <trans-unit id="consulting-agreement-pnd-form-label" xml:space="preserve">
                 <source>Advice on prenatal diagnostics</source>
+                <target>Beratung zu Pränataldiagnostik</target>
             </trans-unit>
             <trans-unit id="cosulting-agreement-pnd-notice-headline" xml:space="preserve">
                 <source>Hint</source>
+                <target>Hinweis</target>
             </trans-unit>
             <trans-unit id="consulting-agreement-pnd-notice-body" xml:space="preserve">
                 <source>If you tick this box, only counseling centers will be displayed that have counselors with special additional qualifications in the field of prenatal diagnostics and see themselves as specialized counseling centers for prenatal diagnostics.</source>
+                <target>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die über Beraterinnen und Berater mit spezieller Zusatzqualifikation im Bereich Pränataldiagnostik verfügen und sich als Schwerpunktberatungsstellen für Pränataldiagnostik verstehen.</target>
             </trans-unit>
             <trans-unit id="mother-and-child-form-label" xml:space="preserve">
                 <source>Application for funds from the Federal Foundation for Mother and Child</source>
+                <target>Beantragung von Mitteln der Bundesstiftung Mutter und Kind</target>
             </trans-unit>
             <trans-unit id="mother-and-child-notice-headline" xml:space="preserve">
                 <source>Why is the federal state information important?</source>
+                <target>Warum ist die Angabe des Bundeslandes wichtig?</target>
             </trans-unit>
             <trans-unit id="mother-and-child-notice-body" xml:space="preserve">
                 <source>If you tick this box, only counseling centers that allocate funds from the "Federal Foundation for Mother and Child" will be displayed. Please note: Financial support can only be applied for through an advice center in the federal state in which you live.</source>
+                <target>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, die Mittel der „Bundesstiftung Mutter und Kind“ vergeben. Beachten Sie: Finanzielle Unterstützung kann nur über eine Beratungsstelle in dem Bundesland beantragt werden, in dem Sie Ihren Wohnsitz haben.</target>
             </trans-unit>
             <trans-unit id="contraceptive-costs-form-label" xml:space="preserve">
                 <source>Reimbursement of costs for contraceptives</source>
+                <target>Kostenübernahme von Verhütungsmitteln</target>
             </trans-unit>
             <trans-unit id="contraceptive-costs-notice-headline" xml:space="preserve">
                 <source>Contraceptive reimbursement</source>
+                <target>Kostenübernahme Verhütungsmittel</target>
             </trans-unit>
             <trans-unit id="contraceptive-costs-notice-body" xml:space="preserve">
                 <source>If you tick this box, only counseling centers will be displayed where women on low incomes can apply for reimbursement of the costs of contraceptives (e.g. from a special municipal fund or from model projects). The counseling centers provide information about the exact regulations and options.</source>
+                <target>Wenn Sie hier ein Häkchen setzen, werden nur Beratungsstellen angezeigt, bei denen Frauen mit geringem Einkommen eine Kostenübernahme für Verhütungsmittel beantragen können (z.B. aus einem Sonderfonds der Kommune oder aus Modellprojekten). Über die genauen Regelungen und Möglichkeiten informieren die Beratungsstellen.</target>
             </trans-unit>
             <trans-unit id="religions-form-label" xml:space="preserve">
                 <source>Denomination</source>
+                <target>Konfession</target>
             </trans-unit>
             <trans-unit id="pnd-consulting" xml:space="preserve">
                 <source>Our advice center sees itself as a priority advice center in the field of prenatal diagnostics.</source>
+                <target>Unsere Beratungsstelle versteht sich als Schwerpunktberatungsstelle im Bereich Pränataldiagnostik.</target>
             </trans-unit>
             <trans-unit id="pnd-consulting-languages" xml:space="preserve">
                 <source>We offer PND advice in the following languages: %s</source>
+                <target>Wir bieten PND-Beratung in folgenden Sprachen an: %s</target>
             </trans-unit>
             <trans-unit id="mother-and-child" xml:space="preserve">
                 <source>Funds from the "Federal Foundation for Mother and Child" can be allocated through this counseling center.</source>
+                <target>Über diese Beratungsstelle können Mittel der "Bundesstiftung Mutter und Kind" vergeben werden.</target>
             </trans-unit>
             <trans-unit id="consulting-agreement" xml:space="preserve">
                 <source>Counseling certificate</source>
+                <target>Beratungsschein</target>
             </trans-unit>
             <trans-unit id="financial-support" xml:space="preserve">
                 <source>Financial support</source>
+                <target>Finanzielle Unterstützung</target>
             </trans-unit>
             <trans-unit id="yes" xml:space="preserve">
                 <source>yes</source>
+                <target>ja</target>
             </trans-unit>
             <trans-unit id="no" xml:space="preserve">
                 <source>no</source>
+                <target>nein</target>
             </trans-unit>
         </body>
     </file>

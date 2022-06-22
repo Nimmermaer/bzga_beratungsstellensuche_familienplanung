@@ -37,6 +37,6 @@ class TranslateViewHelperTest extends FunctionalTestCase
      */
     public function translateFromDefaultExtension(): void
     {
-        self::assertSame('Konfession', LocalizationUtility::translate('religions-form-label', 'bzga_beratungsstellensuche'));
+        self::assertSame('Denomination', LocalizationUtility::translate('religions-form-label', 'bzga_beratungsstellensuche'));
     }
 }
