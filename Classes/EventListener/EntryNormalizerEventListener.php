@@ -9,52 +9,46 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener;
 
 use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Normalizer\EntryNormalizer as BaseEntryNormalizer;
+use Bzga\BzgaBeratungsstellensuche\Events\Normalizer\CallbackEvent;
+use Bzga\BzgaBeratungsstellensuche\Events\Serializer\NormalizerEvent;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
+use Nette\Utils\Callback;
 use SJBR\StaticInfoTables\Domain\Repository\LanguageRepository;
 
 /**
  * @author Sebastian Schreiber
  */
-class EntryNormalizer
+class EntryNormalizerEventListener
 {
 
     /**
      * @var ReligionRepository
      */
-    protected $religionRepository;
+    protected ReligionRepository $religionRepository;
 
     /**
      * @var LanguageRepository
      */
-    protected $languageRepository;
+    protected LanguageRepository $languageRepository;
 
     /**
      * @var PndConsultingRepository
      */
-    protected $pndConsultingRepository;
-
-    public function injectReligionRepository(ReligionRepository $religionRepository): void
+    protected PndConsultingRepository $pndConsultingRepository;
+    public function __construct(\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository $religionRepository, \SJBR\StaticInfoTables\Domain\Repository\LanguageRepository $languageRepository, \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository $pndConsultingRepository)
     {
         $this->religionRepository = $religionRepository;
-    }
-
-    public function injectLanguageRepository(LanguageRepository $languageRepository): void
-    {
         $this->languageRepository = $languageRepository;
-    }
-
-    public function injectPndConsultingRepository(PndConsultingRepository $pndConsultingRepository): void
-    {
         $this->pndConsultingRepository = $pndConsultingRepository;
     }
 
-    public function additionalCallbacks(array $callbacks = []): array
+    public function __invoke(CallbackEvent $event): void
     {
-        $callbacks = array_merge($callbacks, [
+        $callbacks = [
             'religiousDenomination' => function ($religionInputId) {
                 return $this->religionRepository->findOneByExternalId($religionInputId);
             },
@@ -64,10 +58,7 @@ class EntryNormalizer
             'pndConsultings' => function () {
                 return BaseEntryNormalizer::convertToObjectStorage($this->pndConsultingRepository, func_get_args());
             },
-        ]);
-
-        return [
-            'extendedCallbacks' => $callbacks,
         ];
+        $event->setCallbacks($callbacks);
     }
 }
