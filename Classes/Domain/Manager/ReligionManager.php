@@ -26,7 +26,7 @@ class ReligionManager extends AbstractManager
      */
     protected $repository;
 
-    public function injectRepository(ReligionRepository $repository): void
+    public function __construct(\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository $repository)
     {
         $this->repository = $repository;
     }

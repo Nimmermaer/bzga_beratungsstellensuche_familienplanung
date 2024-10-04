@@ -26,7 +26,7 @@ class PndConsultingManager extends AbstractManager
      */
     protected $repository;
 
-    public function injectRepository(PndConsultingRepository $repository): void
+    public function __construct(\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository $repository)
     {
         $this->repository = $repository;
     }

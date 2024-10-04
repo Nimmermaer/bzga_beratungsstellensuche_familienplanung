@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
 
 use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\PndConsulting;
 
 /**
  * @author Sebastian Schreiber
@@ -19,6 +20,7 @@ use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
 class PndConsultingRepository extends AbstractBaseRepository
 {
 
+    protected $objectType = PndConsulting::class;
     /**
      * @var string
      */

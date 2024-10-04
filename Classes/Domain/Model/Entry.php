@@ -66,7 +66,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\SJBR\StaticInfoTables\Domain\Model\Language> $pndLanguages
      */
-    public function setPndLanguages($pndLanguages)
+    public function setPndLanguages($pndLanguages): void
     {
         $this->pndLanguages = $pndLanguages;
     }
@@ -74,7 +74,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param \SJBR\StaticInfoTables\Domain\Model\Language $language
      */
-    public function attachPndLanguage(\SJBR\StaticInfoTables\Domain\Model\Language $language)
+    public function attachPndLanguage(\SJBR\StaticInfoTables\Domain\Model\Language $language): void
     {
         $this->pndLanguages->attach($language);
     }
@@ -82,7 +82,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
     /**
      * @param \SJBR\StaticInfoTables\Domain\Model\Language $language
      */
-    public function detachPndLanguage(\SJBR\StaticInfoTables\Domain\Model\Language $language)
+    public function detachPndLanguage(\SJBR\StaticInfoTables\Domain\Model\Language $language): void
     {
         $this->pndLanguages->detach($language);
     }
@@ -138,7 +138,7 @@ class Entry extends \Bzga\BzgaBeratungsstellensuche\Domain\Model\Entry
      */
     public function setReligiousDenomination(
         \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion $religiousDenomination
-    ) {
+    ): void {
         $this->religiousDenomination = $religiousDenomination;
     }
 

@@ -12,13 +12,14 @@ declare(strict_types=1);
 namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository;
 
 use Bzga\BzgaBeratungsstellensuche\Domain\Repository\AbstractBaseRepository;
+use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Model\Religion;
 
 /**
  * @author Sebastian Schreiber
  */
 class ReligionRepository extends AbstractBaseRepository
 {
-
+    protected $objectType = Religion::class;
     /**
      * @var string
      */

@@ -7,7 +7,7 @@
  * LICENSE.txt file that was distributed with this source code.
  */
 
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3') || die('Access denied.');
 
 $fields = [
     'mother_and_child' => [
@@ -38,7 +38,7 @@ $fields = [
             'type' => 'select',
             'renderType' => 'selectSingle',
             'items' => [
-                ['', 0],
+                ['label' => '', 'value' => 0],
             ],
             'foreign_table' => 'tx_bzgaberatungsstellensuche_domain_model_religion',
             'minitems' => 0,
@@ -51,7 +51,6 @@ $fields = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectMultipleSideBySide',
-            'internal_type' => 'db',
             'allowed' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
             'foreign_table' => 'tx_bzgaberatungsstellensuche_domain_model_pndconsulting',
             'foreign_table_where' => 'ORDER BY tx_bzgaberatungsstellensuche_domain_model_pndconsulting.title',
@@ -80,7 +79,6 @@ $fields = [
         'config' => [
             'type' => 'select',
             'renderType' => 'selectMultipleSideBySide',
-            'internal_type' => 'db',
             'allowed' => 'static_languages',
             'foreign_table' => 'static_languages',
             'size' => 10,
