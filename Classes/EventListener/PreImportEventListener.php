@@ -9,9 +9,10 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener;
 
 use Bzga\BzgaBeratungsstellensuche\Domain\Serializer\Serializer as BaseSerializer;
+use Bzga\BzgaBeratungsstellensuche\Events\Import\PreImportEvent;
 use Bzga\BzgaBeratungsstellensuche\Service\Importer\XmlImporter;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\PndConsultingManager;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\ReligionManager;
@@ -22,7 +23,7 @@ use SimpleXMLIterator;
 /**
  * @author Sebastian Schreiber
  */
-class Importer
+class PreImportEventListener
 {
 
     /**
@@ -34,24 +35,19 @@ class Importer
      * @var PndConsultingManager
      */
     protected $pndConsultingManager;
-
-    public function injectReligionManager(ReligionManager $religionManager): void
+    public function __construct(\Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\ReligionManager $religionManager, \Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Manager\PndConsultingManager $pndConsultingManager)
     {
         $this->religionManager = $religionManager;
-    }
-
-    public function injectPndConsultingManager(PndConsultingManager $pndConsultingManager): void
-    {
         $this->pndConsultingManager = $pndConsultingManager;
     }
 
-    public function preImport(XmlImporter $importer, SimpleXMLIterator $sxe, $pid, BaseSerializer $serializer): void
+    public function __invoke(PreImportEvent $event): void
     {
         // Import religions
-        $importer->convertRelations($sxe->konfessionen->konfession, $this->religionManager, Religion::class, $pid);
+        $event->getImporter()->convertRelations($event->getSimpleXMLIterator()->konfessionen->konfession, $this->religionManager, Religion::class,$event->getPid());
 
         // Import pnd beratungen
-        $importer->convertRelations($sxe->pndberatungen->pndberatung, $this->pndConsultingManager, PndConsulting::class, $pid);
+        $event->getImporter()->convertRelations($event->getSimpleXMLIterator()->pndberatungen->pndberatung, $this->pndConsultingManager, PndConsulting::class, $event->getPid());
 
         $this->pndConsultingManager->persist();
         $this->religionManager->persist();
