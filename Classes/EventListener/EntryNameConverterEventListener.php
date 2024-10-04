@@ -9,16 +9,20 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener;
+
+use Bzga\BzgaBeratungsstellensuche\Events\Converter\EntryEvent;
 
 /**
  * @author Sebastian Schreiber
  */
-class EntryNameConverter
+class EntryNameConverterEventListener
 {
-    public function mapNames(array $mapNames = []): array
+
+
+    public function __invoke(EntryEvent $event): void
     {
-        $mapNames = array_merge($mapNames, [
+        $mapNames = array_merge($event->getMapNames(), [
             'konfession' => 'religious_denomination',
             'pndberatunglangsons' => 'pnd_other_language',
             'mutterundkind' => 'mother_and_child',
@@ -28,8 +32,6 @@ class EntryNameConverter
             'pndberatung' => 'pnd_consultings',
         ]);
 
-        return [
-            'extendedMapNames' => $mapNames,
-        ];
+        $event->setNewMapNames($mapNames);
     }
 }

@@ -11,3 +11,13 @@ services:
     tags:
       - name: event.listener
         identifier: 'enhance-view-with-religion'
+
+  Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener\EntryNameConverterEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'enhance-name-mapping-converter'
+
+  Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener\EntryNormalizerEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'enhance-normalizer-for-new-properties'
