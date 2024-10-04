@@ -1,0 +1,13 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Bzga\BzgaBeratungsstellensucheFamilienplanung\:
+    resource: '../Classes/*'
+
+  Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener\EntryFormEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'enhance-view-with-religion'
