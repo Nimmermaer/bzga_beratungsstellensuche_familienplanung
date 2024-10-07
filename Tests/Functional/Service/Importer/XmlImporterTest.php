@@ -68,15 +68,14 @@ class XmlImporterTest extends FunctionalTestCase
         $backendUser->workspace = 0;
         Bootstrap::initializeLanguageObject();
         $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
-        $this->xmlImporter = $this->objectManager->get(XmlImporter::class);
+        $this->xmlImporter = GeneralUtility::makeInstance(XmlImporter::class);
 
         $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
         $this->importDataSet(__DIR__ . '/../../Fixtures/sys_file_storage.xml');
 
-        /** @var ObjectManager $objectManager */
-        $objectManager = GeneralUtility::makeInstance(ObjectManager::class);
+
         /** @var DatabaseUpdateUtility $databaseUpdateUtility */
-        $databaseUpdateUtility = $objectManager->get(DatabaseUpdateUtility::class);
+        $databaseUpdateUtility = GeneralUtility::makeInstance(DatabaseUpdateUtility::class);
         $databaseUpdateUtility->doUpdate('bzga_beratungsstellensuche_familienplanung');
     }
 
