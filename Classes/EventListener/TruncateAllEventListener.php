@@ -9,15 +9,16 @@ declare(strict_types=1);
  * LICENSE.txt file that was distributed with this source code.
  */
 
-namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\Slots;
+namespace Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener;
 
+use Bzga\BzgaBeratungsstellensuche\Events\Entry\Repository\TruncateAllEvent;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\PndConsultingRepository;
 use Bzga\BzgaBeratungsstellensucheFamilienplanung\Domain\Repository\ReligionRepository;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
-class EntryRepository
+class TruncateAllEventListener
 {
 
     /**
@@ -25,7 +26,7 @@ class EntryRepository
      */
     public const LANGUAGE_MM_TABLE = 'tx_bzgaberatungsstellensuche_entry_pnd_language_mm';
 
-    public function truncate(): void
+    public function __invoke(TruncateAllEvent $event): void
     {
         $this->getDatabaseConnectionForTable(ReligionRepository::TABLE)->truncate(ReligionRepository::TABLE);
         $this->getDatabaseConnectionForTable(PndConsultingRepository::TABLE)->truncate(PndConsultingRepository::TABLE);

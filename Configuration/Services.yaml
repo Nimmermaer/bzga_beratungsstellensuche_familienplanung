@@ -21,3 +21,8 @@ services:
     tags:
       - name: event.listener
         identifier: 'enhance-normalizer-for-new-properties'
+
+  Bzga\BzgaBeratungsstellensucheFamilienplanung\EventListener\TruncateAllEventListener:
+    tags:
+      - name: event.listener
+        identifier: 'truncate-all-dependencies-for-entry-import'
