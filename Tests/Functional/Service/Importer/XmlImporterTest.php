@@ -46,13 +46,13 @@ class XmlImporterTest extends FunctionalTestCase
      * @var array
      */
     protected $pathsToLinkInTestInstance = [
-        'typo3conf/ext/bzga_beratungsstellensuche_familienplanung/Tests/Functional/Fixtures/Import/fileadmin/import' => 'fileadmin/import',
+        'packages/bzga_beratungsstellensuche_familienplanung/Tests/Functional/Fixtures/Import/fileadmin/import' => 'fileadmin/import',
     ];
 
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = ['typo3conf/ext/static_info_tables', 'typo3conf/ext/static_info_tables_de', 'typo3conf/ext/bzga_beratungsstellensuche', 'typo3conf/ext/bzga_beratungsstellensuche_familienplanung'];
+    protected $testExtensionsToLoad = ['vendor/sjbr/static-info-tables', 'vendor/jambagecom/static-info-tables-de', 'packages/bzga_beratungsstellensuche', 'packages/bzga_beratungsstellensuche_familienplanung'];
 
     /**
      * @var array

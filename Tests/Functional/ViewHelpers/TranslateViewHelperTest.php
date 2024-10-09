@@ -24,7 +24,7 @@ class TranslateViewHelperTest extends FunctionalTestCase
     /**
      * @var array
      */
-    protected $testExtensionsToLoad = ['typo3conf/ext/bzga_beratungsstellensuche_familienplanung', 'typo3conf/ext/bzga_beratungsstellensuche', 'typo3conf/ext/static_info_tables'];
+    protected $testExtensionsToLoad = ['packages/bzga_beratungsstellensuche_familienplanung', 'packages/bzga_beratungsstellensuche', 'vendor/sjbr/static-info-tables'];
 
     protected function setUp(): void
     {
