@@ -14,8 +14,6 @@ use Bzga\BzgaBeratungsstellensucheFamilienplanung\Tests\Functional\DatabaseTrait
 use SJBR\StaticInfoTables\Utility\DatabaseUpdateUtility;
 use TYPO3\CMS\Core\Core\Bootstrap;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Object\ObjectManager;
-use TYPO3\CMS\Extbase\Object\ObjectManagerInterface;
 use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 class XmlImporterTest extends FunctionalTestCase
@@ -27,10 +25,6 @@ class XmlImporterTest extends FunctionalTestCase
      */
     private const SYS_FOLDER_FOR_ENTRIES = 10001;
 
-    /**
-     * @var ObjectManagerInterface
-     */
-    protected $objectManager;
 
     /**
      * @var XmlImporter
@@ -67,7 +61,6 @@ class XmlImporterTest extends FunctionalTestCase
         $backendUser = $this->setUpBackendUserFromFixture(1);
         $backendUser->workspace = 0;
         Bootstrap::initializeLanguageObject();
-        $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
         $this->xmlImporter = GeneralUtility::makeInstance(XmlImporter::class);
 
         $this->importDataSet(__DIR__ . '/../../Fixtures/pages.xml');
@@ -109,6 +102,6 @@ class XmlImporterTest extends FunctionalTestCase
 
     public function tearDown(): void
     {
-        unset($this->xmlImporter, $this->objectManager);
+        unset($this->xmlImporter);
     }
 }
